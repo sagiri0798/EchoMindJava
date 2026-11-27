@@ -1,0 +1,360 @@
+{
+  "schema_version": "echomind-rag-eval/v1",
+  "dataset_version": "customer-service-rag-v1",
+  "corpus_version": "2026-10-29",
+  "description": "EchoMind Java RAG 人工金标数据集。语料为演示客服政策，不代表真实企业制度。",
+  "label_source": "assistant_curated_against_frozen_corpus",
+  "review_status": "pending_business_expert_review",
+  "default_top_k": 5,
+  "cutoffs": [1, 3, 5],
+  "documents": [
+    {
+      "document_id": "policy-refund-v1",
+      "title": "退款政策（演示）",
+      "category": "refund",
+      "content": "退款政策（演示）：用户在购买后7个自然日内可申请无理由退款。退款申请提交后，系统在1至3个工作日内审核。审核通过后，款项在5至7个工作日内退回原支付账户。已发货订单需要先完成退货；退货运费由用户承担，商品质量问题除外。超过7日但未超过30日的订单，需要提供商品质量问题证据才可申请退款。优惠券、积分等权益是否返还以支付渠道结果为准。"
+    },
+    {
+      "document_id": "policy-invoice-v1",
+      "title": "电子发票规则（演示）",
+      "category": "invoice",
+      "content": "电子发票（演示）：订单支付成功并完成后可申请电子发票。发票通常在申请后3个工作日内开具并发送到预留邮箱。个人抬头可修正为个人姓名；企业抬头修改需在开具前完成，并提供正确的企业名称和税号。已开具发票的抬头修改需要先申请红冲并重新开具。发票金额以实际支付金额为准，不包含未支付运费或已退款金额。"
+    },
+    {
+      "document_id": "policy-payment-v1",
+      "title": "支付异常处理（演示）",
+      "category": "payment",
+      "content": "支付异常（演示）：支付失败后不要连续重复付款。先确认订单状态和银行或支付渠道流水。如果订单仍未支付，可重新发起支付；如果订单已支付但页面显示失败，应保留流水号并联系人工核验。仅凭两笔金额不同不能判定重复扣款。退款到账时间取决于支付渠道，通常需要5至7个工作日。"
+    },
+    {
+      "document_id": "policy-subscription-v1",
+      "title": "订阅与自动续费（演示）",
+      "category": "subscription",
+      "content": "订阅与服务（演示）：自动续费可在订阅管理页面关闭。关闭后不再产生下一周期扣费，本周期已生效权益仍保留到到期日。已扣费用是否可退需根据订单状态和退款政策核验。重新开启自动续费从当前到期日之后的下一个周期生效。发票可在支付成功后的账单页面申请。"
+    },
+    {
+      "document_id": "policy-account-v1",
+      "title": "账户资料修改（演示）",
+      "category": "account",
+      "content": "账户资料（演示）：修改邮箱需要先验证当前登录状态，再完成新邮箱验证码校验。修改手机号需要在账户安全页面完成身份验证。用户不需要向客服提供密码、短信验证码或完整登录令牌。邮箱修改成功后，新的通知和账单会发送到新邮箱；旧邮箱不会继续接收账单。"
+    },
+    {
+      "document_id": "policy-security-v1",
+      "title": "账户安全（演示）",
+      "category": "security",
+      "content": "账户安全（演示）：发现陌生登录时，应立即修改密码、退出其他设备并检查已授权应用。客服不会索要密码或短信验证码。无法登录时可先使用密码找回；如果账号被冻结，需要提交身份核验并由人工处理。安全事件应保留发生时间、设备信息和请求编号，但不要上传完整令牌。"
+    },
+    {
+      "document_id": "policy-order-v1",
+      "title": "订单与物流（演示）",
+      "category": "order",
+      "content": "订单与物流（演示）：可凭订单号查询订单状态。状态包括待支付、已支付、已发货、运输中、已签收和已完成。物流信息通常在发货后24小时内更新；显示已发货但超过7天没有物流更新时，可提交查件。订单签收后仍可依据退款政策申请售后。修改收货地址需由订单系统核验订单是否尚未发货。"
+    },
+    {
+      "document_id": "policy-technical-v1",
+      "title": "技术错误码说明（演示）",
+      "category": "technical",
+      "content": "技术故障（演示）：HTTP 401表示认证失败，应检查登录状态、令牌有效期和请求签名。HTTP 403表示权限不足，应检查账号权限、资源权限和IP白名单。HTTP 500表示服务端处理异常，应记录发生时间、请求编号和客户端版本，由有权限的技术人员检查依赖服务和日志。不要索取密码或完整密钥。"
+    },
+    {
+      "document_id": "policy-handoff-v1",
+      "title": "人工升级规范（演示）",
+      "category": "handoff",
+      "content": "人工升级（演示）：涉及资金争议、无法确认的支付结果、账号安全、监管投诉或现有工具无法完成的业务操作时，应转人工。交接摘要应包含问题目标、已知订单或错误码、用户已尝试步骤、优先级和未完成事项。生成交接摘要不代表已经创建工单，也不能向用户承诺退款或处理时限。"
+    },
+    {
+      "document_id": "policy-shipping-v1",
+      "title": "配送与运费（演示）",
+      "category": "shipping",
+      "content": "配送与运费（演示）：标准配送通常在支付后48小时内发货。偏远地区可能增加配送时间。运费是否退还取决于退款原因：无理由退货由用户承担原运费，商品质量问题的退货运费由平台承担。订单未发货时修改地址需要订单系统确认；已发货地址无法直接修改。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "refund-over-seven-days",
+      "query": "买了十二天发现质量问题，还能申请退款吗？",
+      "category": "refund",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-refund-v1", "chunk": 0}],
+      "gold_facts": ["超过7日但未超过30日的订单，需要提供商品质量问题证据才可申请退款"],
+      "reference_answer": "购买后超过7日但未超过30日时，仍可申请退款，但需要提供商品质量问题的证据；最终结果仍需按审核流程确认。"
+    },
+    {
+      "id": "refund-arrival-time",
+      "query": "退款审核通过后，钱多久能回到原支付账户？",
+      "category": "refund",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-refund-v1", "chunk": 0}],
+      "gold_facts": ["审核通过后，款项在5至7个工作日内退回原支付账户"],
+      "reference_answer": "审核通过后，款项通常在5至7个工作日内退回原支付账户。"
+    },
+    {
+      "id": "refund-shipped-order",
+      "query": "订单已经发货了，申请退款前需要先退货吗？",
+      "category": "refund",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-refund-v1", "chunk": 0}],
+      "gold_facts": ["已发货订单需要先完成退货"],
+      "reference_answer": "已发货订单需要先完成退货，之后才能继续处理退款。"
+    },
+    {
+      "id": "refund-coupon-return",
+      "query": "退款以后，下单用的优惠券会退回来吗？",
+      "category": "refund",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-refund-v1", "chunk": 0}],
+      "gold_facts": ["优惠券、积分等权益是否返还以支付渠道结果为准"],
+      "reference_answer": "优惠券、积分等权益是否返还，应以支付渠道的实际处理结果为准。"
+    },
+    {
+      "id": "invoice-after-payment",
+      "query": "付款成功后多久可以拿到电子发票？",
+      "category": "invoice",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-invoice-v1", "chunk": 0}],
+      "gold_facts": ["发票通常在申请后3个工作日内开具并发送到预留邮箱"],
+      "reference_answer": "订单支付成功并完成后可申请电子发票，通常会在申请后3个工作日内开具并发送到预留邮箱。"
+    },
+    {
+      "id": "invoice-company-title",
+      "query": "企业发票抬头写错了，还来得及直接改吗？",
+      "category": "invoice",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-invoice-v1", "chunk": 0}],
+      "gold_facts": ["企业抬头修改需在开具前完成，并提供正确的企业名称和税号", "已开具发票的抬头修改需要先申请红冲并重新开具"],
+      "reference_answer": "如果发票尚未开具，可以在开具前修改企业抬头并提供正确的企业名称和税号；如果已经开具，需要先申请红冲再重新开具。"
+    },
+    {
+      "id": "payment-failed-page",
+      "query": "页面显示支付失败，但银行卡可能已经扣款，该怎么办？",
+      "category": "payment",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-payment-v1", "chunk": 0}],
+      "gold_facts": ["先确认订单状态和银行或支付渠道流水", "如果订单已支付但页面显示失败，应保留流水号并联系人工核验"],
+      "reference_answer": "先不要连续重复付款。应确认订单状态和银行或支付渠道流水；如果订单已支付但页面显示失败，请保留流水号并联系人工核验。"
+    },
+    {
+      "id": "payment-duplicate-charge",
+      "query": "我看到两笔金额不一样，是不是一定重复扣款了？",
+      "category": "payment",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-payment-v1", "chunk": 0}],
+      "gold_facts": ["仅凭两笔金额不同不能判定重复扣款"],
+      "reference_answer": "不能。仅凭两笔金额不同不能判定重复扣款，还需要订单状态和支付流水核验。"
+    },
+    {
+      "id": "subscription-cancel-renewal",
+      "query": "自动续费在哪里关闭，关闭后马上失效吗？",
+      "category": "subscription",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-subscription-v1", "chunk": 0}],
+      "gold_facts": ["自动续费可在订阅管理页面关闭", "关闭后不再产生下一周期扣费，本周期已生效权益仍保留到到期日"],
+      "reference_answer": "可在订阅管理页面关闭自动续费。关闭后不会再产生下一周期扣费，本周期已生效的权益仍保留到到期日。"
+    },
+    {
+      "id": "subscription-refund-charged",
+      "query": "刚扣了订阅费，取消后这笔钱会立即退吗？",
+      "category": "subscription",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-subscription-v1", "chunk": 0}, {"document_id": "policy-refund-v1", "chunk": 0}],
+      "gold_facts": ["已扣费用是否可退需根据订单状态和退款政策核验", "审核通过后，款项在5至7个工作日内退回原支付账户"],
+      "reference_answer": "取消自动续费不会立即自动退款。已扣费用是否需要结合订单状态和退款政策核验；如果审核通过，款项通常会在5至7个工作日内退回原支付账户。"
+    },
+    {
+      "id": "account-email-change",
+      "query": "修改账户邮箱需要验证哪些内容？",
+      "category": "account",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-account-v1", "chunk": 0}],
+      "gold_facts": ["修改邮箱需要先验证当前登录状态，再完成新邮箱验证码校验"],
+      "reference_answer": "修改邮箱需要先验证当前登录状态，再完成新邮箱验证码校验。"
+    },
+    {
+      "id": "account-old-email-bills",
+      "query": "邮箱改好以后，旧邮箱还会收到账单吗？",
+      "category": "account",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-account-v1", "chunk": 0}],
+      "gold_facts": ["新的通知和账单会发送到新邮箱；旧邮箱不会继续接收账单"],
+      "reference_answer": "修改成功后，新的通知和账单会发送到新邮箱，旧邮箱不会继续接收账单。"
+    },
+    {
+      "id": "security-frozen-account",
+      "query": "账号被冻结了，自己能解冻还是必须找人工？",
+      "category": "security",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-security-v1", "chunk": 0}],
+      "gold_facts": ["如果账号被冻结，需要提交身份核验并由人工处理"],
+      "reference_answer": "账号被冻结时，需要提交身份核验并由人工处理。"
+    },
+    {
+      "id": "security-strange-login",
+      "query": "发现有人在陌生设备登录，我第一步应该做什么？",
+      "category": "security",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-security-v1", "chunk": 0}],
+      "gold_facts": ["发现陌生登录时，应立即修改密码、退出其他设备并检查已授权应用"],
+      "reference_answer": "应立即修改密码、退出其他设备，并检查已授权的第三方应用。"
+    },
+    {
+      "id": "technical-http-401",
+      "query": "调用接口一直返回 HTTP 401，应该检查什么？",
+      "category": "technical",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-technical-v1", "chunk": 0}],
+      "gold_facts": ["HTTP 401表示认证失败，应检查登录状态、令牌有效期和请求签名"],
+      "reference_answer": "HTTP 401 表示认证失败，应检查登录状态、令牌有效期和请求签名。"
+    },
+    {
+      "id": "technical-http-403",
+      "query": "HTTP 403 是不是账号密码错误？",
+      "category": "technical",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-technical-v1", "chunk": 0}],
+      "gold_facts": ["HTTP 403表示权限不足，应检查账号权限、资源权限和IP白名单"],
+      "reference_answer": "不是。HTTP 403 表示权限不足，应检查账号权限、资源权限和 IP 白名单。"
+    },
+    {
+      "id": "technical-http-500",
+      "query": "接口报 500，客服应该先收集哪些排查信息？",
+      "category": "technical",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-technical-v1", "chunk": 0}],
+      "gold_facts": ["HTTP 500表示服务端处理异常，应记录发生时间、请求编号和客户端版本"],
+      "reference_answer": "HTTP 500 表示服务端处理异常，应先记录发生时间、请求编号和客户端版本，再由有权限的技术人员检查依赖服务和日志。"
+    },
+    {
+      "id": "order-no-tracking-seven-days",
+      "query": "订单显示已发货，但七天都没有物流更新怎么办？",
+      "category": "order",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-order-v1", "chunk": 0}],
+      "gold_facts": ["显示已发货但超过7天没有物流更新时，可提交查件"],
+      "reference_answer": "显示已发货但超过 7 天没有物流更新时，可以提交查件。"
+    },
+    {
+      "id": "order-after-delivery-service",
+      "query": "订单已经签收了，还能申请售后吗？",
+      "category": "order",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-order-v1", "chunk": 0}],
+      "gold_facts": ["订单签收后仍可依据退款政策申请售后"],
+      "reference_answer": "订单签收后仍可依据退款政策申请售后。"
+    },
+    {
+      "id": "shipping-address-after-dispatch",
+      "query": "订单已经发货了，还能直接修改收货地址吗？",
+      "category": "shipping",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-shipping-v1", "chunk": 0}, {"document_id": "policy-order-v1", "chunk": 0}],
+      "gold_facts": ["已发货地址无法直接修改"],
+      "reference_answer": "已发货地址无法直接修改。未发货订单修改地址也需要由订单系统先确认订单状态。"
+    },
+    {
+      "id": "handoff-urgent-account-security",
+      "query": "账号被盗而且有资金争议，我要人工处理，不要只给通用建议。",
+      "category": "handoff",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-handoff-v1", "chunk": 0}, {"document_id": "policy-security-v1", "chunk": 0}],
+      "gold_facts": ["涉及资金争议、无法确认的支付结果、账号安全、监管投诉或现有工具无法完成的业务操作时，应转人工", "发现陌生登录时，应立即修改密码、退出其他设备并检查已授权应用"],
+      "reference_answer": "应转人工处理，同时先修改密码、退出其他设备并检查授权应用。交接时应提供已知订单、发生时间、设备信息、已尝试步骤和未完成事项；不要承诺已经创建工单或退款成功。"
+    },
+    {
+      "id": "multi-refund-shipping-fee",
+      "query": "已发货订单退款时，我寄回去的运费谁承担？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-refund-v1", "chunk": 0}, {"document_id": "policy-shipping-v1", "chunk": 0}],
+      "gold_facts": ["已发货订单需要先完成退货", "无理由退货由用户承担原运费，商品质量问题的退货运费由平台承担"],
+      "reference_answer": "已发货订单需要先退货。无理由退货的退货运费由用户承担；如果是商品质量问题，退货运费由平台承担。"
+    },
+    {
+      "id": "multi-payment-refund-delay",
+      "query": "支付页面报错后我申请了退款，到账时间怎么判断？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-payment-v1", "chunk": 0}, {"document_id": "policy-refund-v1", "chunk": 0}],
+      "gold_facts": ["退款到账时间取决于支付渠道，通常需要5至7个工作日", "审核通过后，款项在5至7个工作日内退回原支付账户"],
+      "reference_answer": "先确认订单状态和支付流水，避免重复付款。退款审核通过后，款项通常会在5至7个工作日内退回原支付账户，实际到账取决于支付渠道。"
+    },
+    {
+      "id": "multi-invoice-payment",
+      "query": "订单状态显示支付失败，但我想给已经完成的订单开发票，怎么办？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_chunks": [{"document_id": "policy-payment-v1", "chunk": 0}, {"document_id": "policy-invoice-v1", "chunk": 0}],
+      "gold_facts": ["如果订单已支付但页面显示失败，应保留流水号并联系人工核验", "订单支付成功并完成后可申请电子发票"],
+      "reference_answer": "页面显示失败但订单可能已支付，应先保留流水号并联系人工核验订单和支付状态。确认支付成功并完成后，才能申请电子发票。"
+    },
+    {
+      "id": "unanswerable-warranty-period",
+      "query": "你们卖的智能手表保修期到底是多少年？",
+      "category": "unanswerable",
+      "difficulty": "hard",
+      "answerable": false,
+      "expected_abstain": true,
+      "gold_chunks": [],
+      "gold_facts": [],
+      "reference_answer": "当前演示知识库没有智能手表保修期限。应明确说明无法确认，不得编造保修年限；需要用户提供具体产品型号或转人工核验。"
+    },
+    {
+      "id": "unanswerable-enterprise-sla",
+      "query": "企业版保证百分之百可用，并且故障十分钟内赔付吗？",
+      "category": "unanswerable",
+      "difficulty": "hard",
+      "answerable": false,
+      "expected_abstain": true,
+      "gold_chunks": [],
+      "gold_facts": [],
+      "reference_answer": "当前演示知识库没有企业版 SLA、可用性承诺或十分钟赔付规则。不能承诺百分之百可用或赔付时效，应说明需要核验合同或转人工。"
+    }
+  ]
+}

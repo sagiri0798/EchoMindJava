@@ -1,0 +1,39 @@
+{
+  "conv_id": "addr-demo-incomplete-v2",
+  "request_id": "a3a56e8b-4e4b-4732-96bd-d6d75254439d",
+  "response": "我来帮您处理收货地址变更。目前信息还不完整，需要您补充以下内容：\n\n1. **订单号**（例如 B2001）\n2. **收件人姓****\n3. **手机号**（11 位）\n4. **省 / 市 / 区**（您提到北京市朝阳区，请确认，并补充街道）\n5. **街道及门牌号**（**** 101 室）\n\n请把这几项发给我，信息齐全后我会先核验订单归属和发货状态，再复述完整新地址请您确认。",
+  "intent": "account",
+  "intent_group": "account",
+  "agent_type": "billing",
+  "agent_types": [
+    "billing"
+  ],
+  "primary_agent": "billing",
+  "supporting_agents": [],
+  "routing_reason": "intent=account, group=account, primary=billing, supporting=none, scores=[billing=0.75, general=0.10, technical=0.00]",
+  "routing_confidence": 0.75,
+  "escalated": false,
+  "latency_ms": 2397,
+  "knowledge_used": false,
+  "verified": true,
+  "grounded": true,
+  "entities": {
+    "order_id": [],
+    "product": [],
+    "date": [],
+    "error_code": [],
+    "amount": []
+  },
+  "intent_confidence": 0.95,
+  "intent_source_scores": {
+    "llm": 0.95,
+    "embedding": 0.2829125760578691,
+    "pattern": 0.95,
+    "address_pattern": 0.95
+  },
+  "tools_used": [],
+  "intent_embedding_source": "local-ngram",
+  "status": "success",
+  "retryable": false,
+  "error_code": null
+}

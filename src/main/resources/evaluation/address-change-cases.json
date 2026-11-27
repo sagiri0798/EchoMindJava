@@ -1,0 +1,67 @@
+{
+  "intent_cases": [
+    {
+      "message": "帮我把收货地址改成北京市朝阳区",
+      "expected_intent": "account"
+    },
+    {
+      "message": "我要换地址到上海",
+      "expected_intent": "account"
+    },
+    {
+      "message": "地址变更需要什么材料",
+      "expected_intent": "account"
+    },
+    {
+      "message": "修改我的邮箱地址",
+      "expected_intent": "account"
+    }
+  ],
+  "dialog_cases": [
+    {
+      "question": "帮我把收货地址改成北京市朝阳区",
+      "expected_agent": "billing",
+      "reference_answer": "先请用户补充订单号、收件人、手机号、街道和门牌号，并说明需要先核验订单归属和发货状态；不得声称已修改真实订单。",
+      "evidence": "lookup_order 只读核验沙箱订单；update_shipping_address 仅在用户明确确认后执行沙箱预演，real_order_modified 恒为 false。"
+    },
+    {
+      "question": "订单号 #A1001，帮我把收货地址改成北京市朝阳区",
+      "expected_agent": "billing",
+      "reference_answer": "核验订单后请用户补充街道和门牌号；信息不完整时不要调用修改工具。",
+      "evidence": "A1001 属于评测用户且未发货；缺少 street/detail 时 update_shipping_address 的 Schema 不通过。"
+    },
+    {
+      "question": "收件人张三，电话13800000000，收货地址改成北京市朝阳区望京街道1号楼101室",
+      "expected_agent": "billing",
+      "reference_answer": "请用户补充订单号，不要猜测订单，也不要修改地址。",
+      "evidence": "地址变更必须先有订单号才能核验归属和发货状态。"
+    },
+    {
+      "question": "订单号 #A1001，收件人张三，电话13800000000，收货地址改成北京市朝阳区望京街道1号楼101室",
+      "expected_agent": "billing",
+      "required_tools": [
+        "lookup_order"
+      ],
+      "reference_answer": "先用 lookup_order 核验 A1001，再复述收件人、脱敏手机号和完整新地址，请用户明确确认；确认前不得调用修改工具。",
+      "evidence": "评测按项目约定不执行写工具；本轮应完成核验与确认话术，真实写入由单元测试和真实 /chat 两轮确认覆盖。"
+    },
+    {
+      "question": "订单号 #999999，帮我把收货地址改成北京市朝阳区望京街道1号楼101室",
+      "expected_agent": "billing",
+      "required_tools": [
+        "lookup_order"
+      ],
+      "reference_answer": "说明无法核验该订单，请用户核对订单号；不得猜测订单信息或声称修改成功。",
+      "evidence": "999999 不在沙箱订单中；lookup_order 返回 found=false 且不泄露归属。"
+    },
+    {
+      "question": "订单号 #A1002，帮我把收货地址改成北京市朝阳区望京街道1号楼101室",
+      "expected_agent": "billing",
+      "required_tools": [
+        "lookup_order"
+      ],
+      "reference_answer": "说明订单已发货，不能直接修改收货地址，建议物流拦截或转人工；不得声称修改成功。",
+      "evidence": "A1002 在沙箱中状态为 shipped；update_shipping_address 会拒绝并返回 escalation_recommended=true。"
+    }
+  ]
+}

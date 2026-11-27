@@ -1,0 +1,45 @@
+{
+  "conv_id": "addr-demo-missing-door",
+  "request_id": "b7d23054-3140-4820-bea5-d93b487b581d",
+  "response": "订单已核验通过：订单 B2001 属于当前账户，状态为“处理中”，尚未发货，因此可以申请变更收货地址。\n\n当前收货信息：\n- 收件人：王**\n- 手机号：137****7000\n- 地址：广东省深圳市南山区****\n\n您希望改为“北京市朝阳区”，但还缺少以下必要信息，请补充：\n1. 收件人姓**（是否仍为“王**”？）\n2. 手机号（11 位，是否仍为原号码？）\n3. 北京市朝阳区******街道**及**门牌号**（例如：**** 3 单元 501）\n\n补齐后我会复述完整的新地址请您确认，确认后再提交变更预演。",
+  "intent": "account",
+  "intent_group": "account",
+  "agent_type": "billing",
+  "agent_types": [
+    "billing"
+  ],
+  "primary_agent": "billing",
+  "supporting_agents": [],
+  "routing_reason": "intent=account, group=account, primary=billing, supporting=none, scores=[billing=0.75, general=0.32, technical=0.20]",
+  "routing_confidence": 0.75,
+  "escalated": false,
+  "latency_ms": 4159,
+  "knowledge_used": false,
+  "verified": true,
+  "grounded": true,
+  "entities": {
+    "order_id": [
+      "B2001"
+    ],
+    "product": [],
+    "date": [],
+    "error_code": [
+      "B2001"
+    ],
+    "amount": []
+  },
+  "intent_confidence": 0.95,
+  "intent_source_scores": {
+    "llm": 0.95,
+    "embedding": 0.311050790991597,
+    "pattern": 0.95,
+    "address_pattern": 0.95
+  },
+  "tools_used": [
+    "lookup_order"
+  ],
+  "intent_embedding_source": "local-ngram",
+  "status": "success",
+  "retryable": false,
+  "error_code": null
+}

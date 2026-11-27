@@ -1,0 +1,8 @@
+{"id":"refund-arrival-time","hash":"2870403e9f419c96","len":15,"agent":"technical","agents":["technical","billing"],"tools":["search_knowledge_base"],"prefix":"延迟 A/B 假模型汇总回复。"}
+{"id":"invoice-after-payment","hash":"2870403e9f419c96","len":15,"agent":"technical","agents":["technical","billing"],"tools":["search_knowledge_base"],"prefix":"延迟 A/B 假模型汇总回复。"}
+{"id":"payment-failed-page","hash":"2870403e9f419c96","len":15,"agent":"technical","agents":["technical","billing"],"tools":["search_knowledge_base"],"prefix":"延迟 A/B 假模型汇总回复。"}
+{"id":"subscription-cancel-renewal","hash":"84e7495e11d9e4fe","len":19,"agent":"technical","agents":["technical"],"tools":["search_knowledge_base"],"prefix":"延迟 A/B 假模型回复：已收到请求。"}
+{"id":"account-email-change","hash":"84e7495e11d9e4fe","len":19,"agent":"technical","agents":["technical"],"tools":["search_knowledge_base"],"prefix":"延迟 A/B 假模型回复：已收到请求。"}
+{"id":"security-strange-login","hash":"84e7495e11d9e4fe","len":19,"agent":"technical","agents":["technical"],"tools":["search_knowledge_base"],"prefix":"延迟 A/B 假模型回复：已收到请求。"}
+{"id":"technical-http-401","hash":"84e7495e11d9e4fe","len":19,"agent":"technical","agents":["technical"],"tools":["search_knowledge_base"],"prefix":"延迟 A/B 假模型回复：已收到请求。"}
+{"id":"order-no-tracking-seven-days","hash":"84e7495e11d9e4fe","len":19,"agent":"technical","agents":["technical"],"tools":["search_knowledge_base"],"prefix":"延迟 A/B 假模型回复：已收到请求。"}

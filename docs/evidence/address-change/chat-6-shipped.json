@@ -1,0 +1,45 @@
+{
+  "conv_id": "addr-demo-shipped-v2",
+  "request_id": "d22c8c80-da10-4164-b93c-42e4a85986e0",
+  "response": "已核验到订单 #B2002，但有一个关键情况需要先说明：\n\n**订单当前状态：已发货**\n\n- 订单号：B2002\n- 当前收件人：赵**\n- 当前联系电话：136****6000\n- 当前收货地址：浙江省杭州市西湖区****\n- 发货状态：**已发货**\n\n**关于地址变更**\n\n由于该订单已经发货，系统无法直接修改收货地址，也无法在订单系统内替换收件人和电话。您提供的“张** / 138****8000 / 北京市朝阳区****”这组信息，目前无法通过订单地址变更流程生效。\n\n**建议的处理路径**\n\n1. 联系承运商（快递公司），凭运单号申请改派或转寄，具体能否办理以承运商规则为准；\n2. 或通过正式客服渠道申请物流拦截，拦截结果取决于物流实际进度，无法保证成功。\n\n需要说明的是，本系统不能代为提交物流拦截申请，也不承诺拦截成功。\n\n如果您希望由人工协助跟进这单的物流拦截事宜，请告诉我，我可以为您转接；如果不需要，也可以直接按上面的方式联系承运商处理。",
+  "intent": "account",
+  "intent_group": "account",
+  "agent_type": "billing",
+  "agent_types": [
+    "billing"
+  ],
+  "primary_agent": "billing",
+  "supporting_agents": [],
+  "routing_reason": "intent=account, group=account, primary=billing, supporting=none, scores=[billing=0.75, general=0.32, technical=0.20]",
+  "routing_confidence": 0.75,
+  "escalated": false,
+  "latency_ms": 4201,
+  "knowledge_used": false,
+  "verified": true,
+  "grounded": true,
+  "entities": {
+    "order_id": [
+      "B2002"
+    ],
+    "product": [],
+    "date": [],
+    "error_code": [
+      "B2002"
+    ],
+    "amount": []
+  },
+  "intent_confidence": 0.95,
+  "intent_source_scores": {
+    "llm": 0.95,
+    "embedding": 0.4434616138574181,
+    "pattern": 0.95,
+    "address_pattern": 0.95
+  },
+  "tools_used": [
+    "lookup_order"
+  ],
+  "intent_embedding_source": "local-ngram",
+  "status": "success",
+  "retryable": false,
+  "error_code": null
+}

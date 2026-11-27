@@ -1,0 +1,1315 @@
+{
+  "run_id": "rag-20261029T150502Z-b66905dd",
+  "generated_at": "2026-10-29T15:05:02.948786+00:00",
+  "base_url": "http://127.0.0.1:8090",
+  "dataset_version": "customer-service-rag-v1",
+  "corpus_version": "2026-10-29",
+  "dataset_sha256": "bb340a0fb63b1ebb23762be21738ed36fe0757e5e9cf7c582bb46e3476eef28d",
+  "corpus": {
+    "documents": 10,
+    "expected_chunks": 10,
+    "observed_chunks": 10,
+    "isolated_exact_match": true
+  },
+  "config": {
+    "top_k": 5,
+    "cutoffs": [
+      1,
+      3,
+      5
+    ],
+    "retrieval_only": true,
+    "skip_judge": false,
+    "accuracy_threshold": 0.8,
+    "overall_threshold": 0.75
+  },
+  "retrieval": {
+    "answerable_cases": 24,
+    "cutoffs": {
+      "1": {
+        "hit_rate": 1.0,
+        "recall": 0.875,
+        "precision": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "3": {
+        "hit_rate": 1.0,
+        "recall": 0.9583,
+        "precision": 0.3889,
+        "mrr": 1.0,
+        "ndcg": 0.9644
+      },
+      "5": {
+        "hit_rate": 1.0,
+        "recall": 0.9792,
+        "precision": 0.2417,
+        "mrr": 1.0,
+        "ndcg": 0.9743
+      }
+    },
+    "by_category": {
+      "account": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "handoff": {
+        "cases": 1,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "invoice": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "multi_hop": {
+        "cases": 3,
+        "recall": 0.8333,
+        "mrr": 1.0,
+        "ndcg": 0.8443
+      },
+      "order": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "payment": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "refund": {
+        "cases": 4,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "security": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "shipping": {
+        "cases": 1,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "subscription": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 0.9252
+      },
+      "technical": {
+        "cases": 3,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      }
+    },
+    "unanswerable_retrieval_nonempty": 2
+  },
+  "generation": {
+    "overall": {
+      "cases": 0,
+      "pass_rate": null,
+      "accuracy": null,
+      "overall": null
+    },
+    "by_category": {}
+  },
+  "attribution": {
+    "generation_not_run": 25,
+    "partial_retrieval_miss": 1
+  },
+  "gate": {
+    "passed": true,
+    "min_recall": 0.8,
+    "observed_recall": 0.9792,
+    "min_pass_rate": 0.75,
+    "observed_pass_rate": null
+  },
+  "cases": [
+    {
+      "id": "refund-over-seven-days",
+      "query": "买了十二天发现质量问题，还能申请退款吗？",
+      "category": "refund",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "refund-arrival-time",
+      "query": "退款审核通过后，钱多久能回到原支付账户？",
+      "category": "refund",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "refund-shipped-order",
+      "query": "订单已经发货了，申请退款前需要先退货吗？",
+      "category": "refund",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "refund-coupon-return",
+      "query": "退款以后，下单用的优惠券会退回来吗？",
+      "category": "refund",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "invoice-after-payment",
+      "query": "付款成功后多久可以拿到电子发票？",
+      "category": "invoice",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "retrieved_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "invoice-company-title",
+      "query": "企业发票抬头写错了，还来得及直接改吗？",
+      "category": "invoice",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "retrieved_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "payment-failed-page",
+      "query": "页面显示支付失败，但银行卡可能已经扣款，该怎么办？",
+      "category": "payment",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "retrieved_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "payment-duplicate-charge",
+      "query": "我看到两笔金额不一样，是不是一定重复扣款了？",
+      "category": "payment",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "retrieved_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "subscription-cancel-renewal",
+      "query": "自动续费在哪里关闭，关闭后马上失效吗？",
+      "category": "subscription",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0"
+      ],
+      "retrieved_ids": [
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "subscription-refund-charged",
+      "query": "刚扣了订阅费，取消后这笔钱会立即退吗？",
+      "category": "subscription",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 0.8503449055347546
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "account-email-change",
+      "query": "修改账户邮箱需要验证哪些内容？",
+      "category": "account",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "retrieved_ids": [
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "account-old-email-bills",
+      "query": "邮箱改好以后，旧邮箱还会收到账单吗？",
+      "category": "account",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "retrieved_ids": [
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "security-frozen-account",
+      "query": "账号被冻结了，自己能解冻还是必须找人工？",
+      "category": "security",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0"
+      ],
+      "retrieved_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "security-strange-login",
+      "query": "发现有人在陌生设备登录，我第一步应该做什么？",
+      "category": "security",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0"
+      ],
+      "retrieved_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "technical-http-401",
+      "query": "调用接口一直返回 HTTP 401，应该检查什么？",
+      "category": "technical",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0"
+      ],
+      "retrieved_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "technical-http-403",
+      "query": "HTTP 403 是不是账号密码错误？",
+      "category": "technical",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0"
+      ],
+      "retrieved_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "technical-http-500",
+      "query": "接口报 500，客服应该先收集哪些排查信息？",
+      "category": "technical",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0"
+      ],
+      "retrieved_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "order-no-tracking-seven-days",
+      "query": "订单显示已发货，但七天都没有物流更新怎么办？",
+      "category": "order",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "retrieved_ids": [
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "order-after-delivery-service",
+      "query": "订单已经签收了，还能申请售后吗？",
+      "category": "order",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "retrieved_ids": [
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "shipping-address-after-dispatch",
+      "query": "订单已经发货了，还能直接修改收货地址吗？",
+      "category": "shipping",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "retrieved_ids": [
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "handoff-urgent-account-security",
+      "query": "账号被盗而且有资金争议，我要人工处理，不要只给通用建议。",
+      "category": "handoff",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0"
+      ],
+      "retrieved_ids": [
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "multi-refund-shipping-fee",
+      "query": "已发货订单退款时，我寄回去的运费谁承担？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "multi-payment-refund-delay",
+      "query": "支付页面报错后我申请了退款，到账时间怎么判断？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "multi-invoice-payment",
+      "query": "订单状态显示支付失败，但我想给已经完成的订单开发票，怎么办？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "retrieved_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "partial_retrieval_miss"
+    },
+    {
+      "id": "unanswerable-warranty-period",
+      "query": "你们卖的智能手表保修期到底是多少年？",
+      "category": "unanswerable",
+      "difficulty": "hard",
+      "answerable": false,
+      "expected_abstain": true,
+      "gold_ids": [],
+      "retrieved_ids": [
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        },
+        "3": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        },
+        "5": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    },
+    {
+      "id": "unanswerable-enterprise-sla",
+      "query": "企业版保证百分之百可用，并且故障十分钟内赔付吗？",
+      "category": "unanswerable",
+      "difficulty": "hard",
+      "answerable": false,
+      "expected_abstain": true,
+      "gold_ids": [],
+      "retrieved_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        },
+        "3": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        },
+        "5": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        }
+      },
+      "chat": null,
+      "judge": null,
+      "attribution": "generation_not_run"
+    }
+  ]
+}

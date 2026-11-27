@@ -1,0 +1,247 @@
+{
+  "job_id": "a7b12db5-c0f8-4433-aaaf-e1ebd3187714",
+  "status": "completed",
+  "created_at": "2026-11-27T15:53:06.548796Z",
+  "progress": {
+    "completed": 10,
+    "total": 10
+  },
+  "error": "",
+  "result": {
+    "scope": "regression",
+    "judge_few_shot_version": "customer-service-v1",
+    "judge_few_shot_count": 5,
+    "valid_total": 10,
+    "evaluation_errors": 0,
+    "status": "complete",
+    "suite_id": "fc0d96abfb7a6f011e16f96262cffb120086b60259ef1e0ae6f3a9d9f8ac05cc",
+    "pass_rate": 1.0,
+    "total": 10,
+    "valid": 10,
+    "judge_failed": 0,
+    "passed": 10,
+    "avg_scores": {
+      "macro_f1": 1.0,
+      "dialog_overall": 0.9333,
+      "accuracy": 0.9667,
+      "completeness": 0.85,
+      "intent_accuracy": 1.0,
+      "relevance": 1.0,
+      "helpfulness": 0.9167
+    },
+    "per_class": {
+      "account": {
+        "recall": 1.0,
+        "f1": 1.0,
+        "precision": 1.0
+      }
+    },
+    "regressions": [],
+    "recommendations": [
+      "本次有效评测指标均达标"
+    ],
+    "results": [
+      {
+        "metadata": {
+          "expected": "account",
+          "message": "帮我把收货地址改成北京市朝阳区",
+          "predicted": "account"
+        },
+        "test_id": "intent_0",
+        "passed": true,
+        "scores": {
+          "accuracy": 1.0
+        }
+      },
+      {
+        "metadata": {
+          "expected": "account",
+          "message": "我要换地址到上海",
+          "predicted": "account"
+        },
+        "test_id": "intent_1",
+        "passed": true,
+        "scores": {
+          "accuracy": 1.0
+        }
+      },
+      {
+        "metadata": {
+          "expected": "account",
+          "message": "地址变更需要什么材料",
+          "predicted": "account"
+        },
+        "test_id": "intent_2",
+        "passed": true,
+        "scores": {
+          "accuracy": 1.0
+        }
+      },
+      {
+        "metadata": {
+          "expected": "account",
+          "message": "修改我的邮箱地址",
+          "predicted": "account"
+        },
+        "test_id": "intent_3",
+        "passed": true,
+        "scores": {
+          "accuracy": 1.0
+        }
+      },
+      {
+        "metadata": {
+          "question": "帮我把收货地址改成北京市朝阳区",
+          "response": "您好，我来帮您处理收货地址变更。目前还缺少一些必要信息，请提供：\n\n1. **订单号**\n2. **收件人姓****\n3. **手机号**（11 位）\n4. **详细地址**：北京市朝阳区******街道及门牌号**\n\n请把以上信息发给我，我先核验订单状态，再为您确认变更。",
+          "judge_failed": false,
+          "checks": {
+            "agent": true
+          },
+          "agent_type": "billing",
+          "judge_error": "",
+          "judge_few_shot_count": 5,
+          "judge_few_shot_version": "customer-service-v1",
+          "ground_truth_provided": true,
+          "scope": "orchestrator"
+        },
+        "test_id": "dialog_4",
+        "passed": true,
+        "scores": {
+          "accuracy": 1.0,
+          "helpfulness": 0.9,
+          "completeness": 0.9,
+          "relevance": 1.0,
+          "overall": 0.95
+        }
+      },
+      {
+        "metadata": {
+          "question": "订单号 #A1001，帮我把收货地址改成北京市朝阳区",
+          "response": "订单 #A1001 已核验：属于当前账号，状态为“处理中”，尚未发货，因此可以走地址变更流程。\n\n当前收货信息（供参考）：\n- 收件人：李**\n- 手机号：138****8000\n- 地址：北京市海淀区****\n\n您只提供了“北京市朝阳区”，还缺以下字段，请补充：\n1. 收件人姓**（是否仍为李**？）\n2. 手机号（11 位）\n3. 街道及门牌号（朝阳区下的具体街道、门牌号、楼栋房间号）\n\n补齐后我会复述完整新地址请您确认，确认后再提交变更预演。",
+          "judge_failed": false,
+          "checks": {
+            "agent": true
+          },
+          "agent_type": "billing",
+          "judge_error": "",
+          "judge_few_shot_count": 5,
+          "judge_few_shot_version": "customer-service-v1",
+          "ground_truth_provided": true,
+          "scope": "orchestrator"
+        },
+        "test_id": "dialog_5",
+        "passed": true,
+        "scores": {
+          "accuracy": 0.9,
+          "helpfulness": 0.9,
+          "completeness": 0.8,
+          "relevance": 1.0,
+          "overall": 0.9
+        }
+      },
+      {
+        "metadata": {
+          "question": "收件人张**，电话138****8000，收货地址改成北京市朝阳区****",
+          "response": "您好，我来帮您处理收货地址变更。目前还缺少**订单号**，请提供需要修改的订单号，我先核验订单状态。\n\n同时确认一下您提供的信息：\n- 收件人：张**\n- 手机号：138****8000\n- 新地址：北京市朝阳区****\n\n请补充订单号，我核验后再与您确认完整地址。",
+          "judge_failed": false,
+          "checks": {
+            "agent": true
+          },
+          "agent_type": "billing",
+          "judge_error": "",
+          "judge_few_shot_count": 5,
+          "judge_few_shot_version": "customer-service-v1",
+          "ground_truth_provided": true,
+          "scope": "orchestrator"
+        },
+        "test_id": "dialog_6",
+        "passed": true,
+        "scores": {
+          "accuracy": 1.0,
+          "helpfulness": 1.0,
+          "completeness": 0.9,
+          "relevance": 1.0,
+          "overall": 0.975
+        }
+      },
+      {
+        "metadata": {
+          "question": "订单号 #A1001，收件人张**，电话138****8000，收货地址改成北京市朝阳区****",
+          "response": "订单已核验通过（订单 #A1001，状态：处理中，未发货）。不过有一处需要您确认：\n\n**订单当前登记的收件人是「李**」，手机号 138\\*\\*\\*\\*8000**，与您提供的收件人「张**」不一致。请确认：\n\n1. 是否确实要把收件人改**「张**」？\n2. 手机号是否仍为 138\\*\\*\\*\\*8000（即您提供的号码）？\n\n请确认后，我将按以下新地址为您提交变更预演：\n\n- 收件人：张**\n- 手机号：138\\*\\*\\*\\*8000\n- 地址：北京市 北京市 朝阳区****，我再执行变更预演。",
+          "judge_failed": false,
+          "checks": {
+            "agent": true,
+            "tools": true
+          },
+          "agent_type": "billing",
+          "judge_error": "",
+          "judge_few_shot_count": 5,
+          "judge_few_shot_version": "customer-service-v1",
+          "ground_truth_provided": true,
+          "scope": "orchestrator"
+        },
+        "test_id": "dialog_7",
+        "passed": true,
+        "scores": {
+          "accuracy": 0.9,
+          "helpfulness": 0.9,
+          "completeness": 0.8,
+          "relevance": 1.0,
+          "overall": 0.9
+        }
+      },
+      {
+        "metadata": {
+          "question": "订单号 #999999，帮我把收货地址改成北京市朝阳区****",
+          "response": "核验结果：订单号 #999999 在系统中未查询到，或不属于当前登录账号，因此暂时无法进入地址变更流程。\n\n请您先核对一下：\n1. 订单号是否完整准确（可在订单详情页或下单短信中查看）；\n2. 当前登录账号是否为下单时使用的账号。\n\n确认后把正确的订单号发给我，我会立即重新核验。另外，为了后续办理，也请一并提供：收件人姓**、手机号（11 位）、省/市/区、街道及门牌号（您已提供北京市朝阳区****，还缺收件人和**）。\n\n如果核对后仍查不到，或您希望由人工协助核查订单归属，请告诉我，我再为您说明后续处理方式。",
+          "judge_failed": false,
+          "checks": {
+            "agent": true,
+            "tools": true
+          },
+          "agent_type": "billing",
+          "judge_error": "",
+          "judge_few_shot_count": 5,
+          "judge_few_shot_version": "customer-service-v1",
+          "ground_truth_provided": true,
+          "scope": "orchestrator"
+        },
+        "test_id": "dialog_8",
+        "passed": true,
+        "scores": {
+          "accuracy": 1.0,
+          "helpfulness": 0.9,
+          "completeness": 0.8,
+          "relevance": 1.0,
+          "overall": 0.925
+        }
+      },
+      {
+        "metadata": {
+          "question": "订单号 #A1002，帮我把收货地址改成北京市朝阳区****",
+          "response": "订单 #A1002 已核验到，但有一个关键情况需要先说明：\n\n**订单当前状态：已发货（shipped）**\n\n- 订单号：#A1002\n- 收件人：韩**\n- 现有收货地址：上海市浦东新区****\n- 联系电话：139****9000（已脱敏）\n\n由于该订单**已经发货**，系统无法直接修改收货地址。目前可行的处理方式：\n\n1. **联系承运商**：凭运单号向快递公司申请修改派送地址或拦截改派，能否成功取决于包裹所处环节，承运商不作保证。\n2. **通过正式客服渠道在订单系统提交物流拦截申请**：由正式客服协助跟进，同样不承诺拦截一定成功。\n\n需要说明的是，我这边无法代为提交拦截申请，也不能保证拦截结果。\n\n另外，如果您后续还有**未发货**的订单需要改地址，可以直接把订单号、收件人姓**、手机号（11 位）、省/市/区、街道及门牌号发给我，我可以帮您做变更预演校验。\n\n请问您是否需要我协助转接人工，进一步跟进这个已发货订单的拦截事宜？",
+          "judge_failed": false,
+          "checks": {
+            "agent": true,
+            "tools": true
+          },
+          "agent_type": "billing",
+          "judge_error": "",
+          "judge_few_shot_count": 5,
+          "judge_few_shot_version": "customer-service-v1",
+          "ground_truth_provided": true,
+          "scope": "orchestrator"
+        },
+        "test_id": "dialog_9",
+        "passed": true,
+        "scores": {
+          "accuracy": 1.0,
+          "helpfulness": 0.9,
+          "completeness": 0.9,
+          "relevance": 1.0,
+          "overall": 0.95
+        }
+      }
+    ]
+  }
+}

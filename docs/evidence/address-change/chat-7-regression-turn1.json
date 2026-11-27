@@ -1,0 +1,45 @@
+{
+  "conv_id": "pii-reg-1795817961",
+  "request_id": "0b9bffab-a536-4039-8da0-cf2169ed0d10",
+  "response": "订单已核验通过：订单 #B2001 属于当前账号，收件人王**，当前状态为“处理中”（未发货），可以变更收货地址。\n\n请确认以下新地址信息：\n\n- 订单号：#B2001\n- 收件人：王**\n- 手机号：137****0000\n- 收货地址：北京市朝阳区****“确认”后，我会提交变更预演。",
+  "intent": "account",
+  "intent_group": "account",
+  "agent_type": "billing",
+  "agent_types": [
+    "billing"
+  ],
+  "primary_agent": "billing",
+  "supporting_agents": [],
+  "routing_reason": "intent=account, group=account, primary=billing, supporting=none, scores=[billing=0.75, general=0.32, technical=0.20]",
+  "routing_confidence": 0.75,
+  "escalated": false,
+  "latency_ms": 3172,
+  "knowledge_used": false,
+  "verified": true,
+  "grounded": true,
+  "entities": {
+    "order_id": [
+      "B2001"
+    ],
+    "product": [],
+    "date": [],
+    "error_code": [
+      "B2001"
+    ],
+    "amount": []
+  },
+  "intent_confidence": 0.95,
+  "intent_source_scores": {
+    "llm": 0.95,
+    "embedding": 0.5755111510313081,
+    "pattern": 0.95,
+    "address_pattern": 0.95
+  },
+  "tools_used": [
+    "lookup_order"
+  ],
+  "intent_embedding_source": "local-ngram",
+  "status": "success",
+  "retryable": false,
+  "error_code": null
+}

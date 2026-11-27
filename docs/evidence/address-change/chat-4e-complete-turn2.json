@@ -1,0 +1,45 @@
+{
+  "conv_id": "addr-demo-complete-v7",
+  "request_id": "cbdef022-c6d6-47fe-8b6f-727984fb5134",
+  "response": "变更预演已通过校验，演示环境已记录本次变更预演：\n\n**订单 #B2001 变更预演结果**\n- 收件人：张**\n- 联系电话：138****8000\n- 新地址：北京市朝阳区****\n- 原地址：广东省深圳市南山区****\n- 订单状态：处理中（未发货），符合变更条件\n\n**请注意：** 这是演示沙箱的预演记录，**真实订单尚未被修改**（real_order_modified = false）。如需真实生效，请通过正式客服渠道在订单系统提交本次变更，提交时请提供订单号 #B2001 及上述完整新地址信息。\n\n另外提醒：由于收件人和电话同时变更，正式提交时客服可能会做一次身份核验，请留意配合。还有其他需要我协助的吗？",
+  "intent": "account",
+  "intent_group": "account",
+  "agent_type": "billing",
+  "agent_types": [
+    "billing"
+  ],
+  "primary_agent": "billing",
+  "supporting_agents": [],
+  "routing_reason": "intent=account, group=account, primary=billing, supporting=none, scores=[billing=0.75, general=0.20, technical=0.20]",
+  "routing_confidence": 0.75,
+  "escalated": false,
+  "latency_ms": 4179,
+  "knowledge_used": false,
+  "verified": true,
+  "grounded": true,
+  "entities": {
+    "order_id": [
+      "B2001"
+    ],
+    "product": [],
+    "date": [],
+    "error_code": [
+      "B2001"
+    ],
+    "amount": []
+  },
+  "intent_confidence": 0.95,
+  "intent_source_scores": {
+    "llm": 0.95,
+    "embedding": 0.3333333333333333,
+    "pattern": 0.0,
+    "address_confirmation": 0.95
+  },
+  "tools_used": [
+    "update_shipping_address"
+  ],
+  "intent_embedding_source": "local-ngram",
+  "status": "success",
+  "retryable": false,
+  "error_code": null
+}

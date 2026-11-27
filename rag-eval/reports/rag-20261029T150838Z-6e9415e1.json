@@ -1,0 +1,2645 @@
+{
+  "run_id": "rag-20261029T150838Z-6e9415e1",
+  "generated_at": "2026-10-29T15:13:31.394420+00:00",
+  "base_url": "http://127.0.0.1:8091",
+  "dataset_version": "customer-service-rag-v1",
+  "corpus_version": "2026-10-29",
+  "dataset_sha256": "bb340a0fb63b1ebb23762be21738ed36fe0757e5e9cf7c582bb46e3476eef28d",
+  "corpus": {
+    "documents": 10,
+    "expected_chunks": 10,
+    "observed_chunks": 10,
+    "isolated_exact_match": true
+  },
+  "config": {
+    "top_k": 5,
+    "cutoffs": [
+      1,
+      3,
+      5
+    ],
+    "retrieval_only": false,
+    "skip_judge": false,
+    "accuracy_threshold": 0.8,
+    "overall_threshold": 0.75
+  },
+  "retrieval": {
+    "answerable_cases": 24,
+    "cutoffs": {
+      "1": {
+        "hit_rate": 1.0,
+        "recall": 0.875,
+        "precision": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "3": {
+        "hit_rate": 1.0,
+        "recall": 0.9792,
+        "precision": 0.4028,
+        "mrr": 1.0,
+        "ndcg": 0.9805
+      },
+      "5": {
+        "hit_rate": 1.0,
+        "recall": 1.0,
+        "precision": 0.25,
+        "mrr": 1.0,
+        "ndcg": 0.9904
+      }
+    },
+    "by_category": {
+      "account": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "handoff": {
+        "cases": 1,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "invoice": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "multi_hop": {
+        "cases": 3,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 0.9732
+      },
+      "order": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "payment": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "refund": {
+        "cases": 4,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "security": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "shipping": {
+        "cases": 1,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "subscription": {
+        "cases": 2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 0.9252
+      },
+      "technical": {
+        "cases": 3,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      }
+    },
+    "unanswerable_retrieval_nonempty": 2
+  },
+  "generation": {
+    "overall": {
+      "cases": 26,
+      "judged_cases": 26,
+      "pass_rate": 0.8846,
+      "accuracy": 0.9827,
+      "overall": 0.9548
+    },
+    "by_category": {
+      "account": {
+        "cases": 2,
+        "judged_cases": 2,
+        "pass_rate": 1.0,
+        "accuracy": 0.95,
+        "overall": 0.95
+      },
+      "handoff": {
+        "cases": 1,
+        "judged_cases": 1,
+        "pass_rate": 0.0,
+        "accuracy": 1.0,
+        "overall": 0.825
+      },
+      "invoice": {
+        "cases": 2,
+        "judged_cases": 2,
+        "pass_rate": 1.0,
+        "accuracy": 1.0,
+        "overall": 0.975
+      },
+      "multi_hop": {
+        "cases": 3,
+        "judged_cases": 3,
+        "pass_rate": 1.0,
+        "accuracy": 0.9667,
+        "overall": 0.9333
+      },
+      "order": {
+        "cases": 2,
+        "judged_cases": 2,
+        "pass_rate": 1.0,
+        "accuracy": 1.0,
+        "overall": 0.9625
+      },
+      "payment": {
+        "cases": 2,
+        "judged_cases": 2,
+        "pass_rate": 0.5,
+        "accuracy": 1.0,
+        "overall": 0.9563
+      },
+      "refund": {
+        "cases": 4,
+        "judged_cases": 4,
+        "pass_rate": 1.0,
+        "accuracy": 0.975,
+        "overall": 0.9563
+      },
+      "security": {
+        "cases": 2,
+        "judged_cases": 2,
+        "pass_rate": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0
+      },
+      "shipping": {
+        "cases": 1,
+        "judged_cases": 1,
+        "pass_rate": 1.0,
+        "accuracy": 1.0,
+        "overall": 0.95
+      },
+      "subscription": {
+        "cases": 2,
+        "judged_cases": 2,
+        "pass_rate": 0.5,
+        "accuracy": 0.95,
+        "overall": 0.9375
+      },
+      "technical": {
+        "cases": 3,
+        "judged_cases": 3,
+        "pass_rate": 1.0,
+        "accuracy": 0.9833,
+        "overall": 0.9958
+      },
+      "unanswerable": {
+        "cases": 2,
+        "judged_cases": 2,
+        "pass_rate": 1.0,
+        "accuracy": 1.0,
+        "overall": 0.9375
+      }
+    }
+  },
+  "attribution": {
+    "agent_skipped_retrieval": 3,
+    "pass": 23
+  },
+  "gate": {
+    "passed": true,
+    "min_recall": 0.8,
+    "observed_recall": 1.0,
+    "min_pass_rate": 0.75,
+    "observed_pass_rate": 0.8846
+  },
+  "cases": [
+    {
+      "id": "refund-over-seven-days",
+      "query": "买了十二天发现质量问题，还能申请退款吗？",
+      "category": "refund",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-1",
+        "request_id": "25e42d16-12f0-48bc-8ded-8b962db79a27",
+        "response": "# 关于“买了12天发现质量问题能否退款”\n\n## 当前说明（基于退款政策）\n\n按平台退款政策（演示版）：\n\n- **7个自然日内**：可申请无理由退款。\n- **超过7日但未超过30日**：需要**提供商品质量问题证据**才可申请退款。您目前是第12天，属于这一档，**理论上可以申请，但必须提交质量问题证据**。\n- 已发货订单需先完成退货；**商品质量问题导致的退货运费不由您承担**（非质量问题才由用户承担）。\n- 流程时效：提交申请后系统 **1–3个工作日**审核；审核通过后款项 **5–7个工作日**退回原支付账户，具体以支付渠道实际处理为准。\n\n需要说明：以上是政策规则，**不代表您的订单已确认可退**。是否通过要看订单状态、商品情况和证据审核结果。\n\n## 需要核验的信息\n\n请提供以下信息，我才能进一步判断：\n\n1. **订单号**（或交易号）\n2. **支付时间**和**支付渠道**（微信 / 支付宝 / 银行卡 / 企业转账 / 余额）\n3. **实付金额与币种**（是否用过优惠券或余额）\n4. **质量问题说明**及证据（照片、视频、检测说明等）\n5. 商品是否**已发货/已签收**、是否已拆封使用\n\n## 下一步处理\n\n1. 在订单详情页提交退款申请，选择“质量问题”原因并上传证据；\n2. 若已发货，按指引完成退货（质量问题运费由平台承担）；\n3. 提交后等待审核结果，审核通过后原路退回。\n\n## 时效与边界\n\n- 审核 1–3 个工作日、到账 5–7 个工作日为**通常情况**，以实际处理为准；\n- 涉及**实际退款操作、证据争议、部分退款或大额订单**，需要**人工审核**，我无法在此直接承诺退款成功或到账时间。\n\n请把订单号和支付信息发给我，我可以帮您核对字段是否齐全，并说明后续该走自助申请还是转人工。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=none, scores=[billing=0.93, general=0.10, technical=0.00]",
+        "routing_confidence": 0.93,
+        "escalated": true,
+        "latency_ms": 8837,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.715,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.4113766756037212,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "check_billing_fields"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.95,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "refund-arrival-time",
+      "query": "退款审核通过后，钱多久能回到原支付账户？",
+      "category": "refund",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-2",
+        "request_id": "7c1caf3b-117e-4d03-87fc-f5f6a1bd708c",
+        "response": "**需要核验的信息（用于判断具体到账时间）**\n- 订单号或退款单号\n- 退款审核通过的时间\n- 原支付渠道（微信、支付宝、银行卡、企业转账、余额等）\n- 退款金额与币种\n\n**当前说明**\n- 按平台退款政策（演示）：退款申请提交后，系统通常在 1 至 3 个工作日内完成审核；**审核通过后，款项通常在 5 至 7 个工作日内退回原支付账户**。\n- 实际到账时间以支付渠道处理为准，不同渠道（银行卡、第三方支付、企业转账）处理节奏可能不同，因此这里只能给出“通常/预计”的范围，不能承诺具体到账日期。\n- 退款一般原路退回；优惠券、积分等权益是否返还，以支付渠道结果为准。\n- 如果订单已发货，需先完成退货流程，退款才会进入打款环节。\n\n**下一步处理**\n1. 请提供订单号和原支付渠道，我可以帮你核对退款状态与金额。\n2. 若已超过上述常规时间仍未到账，建议先检查原支付账户的入账记录和支付渠道通知；仍无记录的话，需要转人工核实退款流水号。\n3. 若显示“退款成功”但账户未收到，属于退款异常，需要人工或财务核验流水，我这边无法直接查询或修改退款结果。\n\n**时效边界**\n- 审核时效与到账时效均为保守估计，不含节假日与渠道延迟；具体以核验后的订单状态和支付渠道实际处理为准。\n\n请把订单号和支付渠道发我，我继续帮你核对。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=none, scores=[billing=1.11, general=0.10, technical=0.00]",
+        "routing_confidence": 1.0,
+        "escalated": true,
+        "latency_ms": 8631,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7879305165498872,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.36465258274943624,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.975,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "refund-shipped-order",
+      "query": "订单已经发货了，申请退款前需要先退货吗？",
+      "category": "refund",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-3",
+        "request_id": "93f65d55-f71f-44e5-94ce-acc42085eb01",
+        "response": "**需要核验的信息**\n- 订单号或交易号\n- 下单时间（用于判断是否在 7 个自然日内）\n- 商品类型（是否属于虚拟商品、定制商品等特殊品类）\n- 退款原因（无理由退货，还是商品质量问题）\n\n**当前说明**\n根据退款政策（演示版）：\n- **已发货订单需要先完成退货**，之后才能完成退款流程，不能只申请退款而不退货。\n- **退货运费**：一般由用户承担；如果是商品质量问题，运费承担方需要按规则另行确认。\n- **时效**：退款申请提交后，系统通常在 1 至 3 个工作日内审核；审核通过后，款项通常在 5 至 7 个工作日内退回原支付账户，具体以支付渠道实际处理为准。\n- **时间限制**：购买后 7 个自然日内可申请无理由退款；超过 7 日但未超过 30 日的订单，需要提供商品质量问题证据才可申请。\n\n**下一步处理**\n1. 请提供订单号、下单时间和退款原因，我可以帮你核对订单状态和适用的退款规则。\n2. 如果确认要退货，请按平台退货入口提交退货申请，待商品退回并验收后，再进入退款审核。\n3. 如果涉及商品质量问题、已使用服务、活动价或部分退款，需要人工审核，我不能在此直接承诺退款结果。\n\n**时效边界**\n审核与到账时间均为通常情况下的预计，实际以审核结果和支付渠道处理为准。请保留支付凭证和物流单据，便于后续核实。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=none, scores=[billing=1.11, general=0.22, technical=0.00]",
+        "routing_confidence": 1.0,
+        "escalated": false,
+        "latency_ms": 7856,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.74,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.4154818018653856,
+          "pattern": 0.75
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "refund-coupon-return",
+      "query": "退款以后，下单用的优惠券会退回来吗？",
+      "category": "refund",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-4",
+        "request_id": "aa6cab20-fa70-4ce7-984d-eea5b52bd8dc",
+        "response": "**需要核验的信息**\n- 订单号或交易号\n- 支付时间、支付渠道（微信、支付宝、银行卡、余额等）\n- 该订单使用的优惠券类型（平台券、店铺券、活动券、新人券等）及面额\n- 退款方式：整单退款还是部分退款\n\n**当前说明**\n- 优惠券、积分等权益是否返还，**不是统一规则**，通常取决于券的类型、有效期和活动规则，最终以支付渠道和平台的处理结果为准，需要核实后确认。\n- 常见情况大致是：\n  - 券仍在有效期内、且订单为整单退款：一般有机会退回原券，但需按活动规则判断；\n  - 券已过期、或属于一次性活动券、新人专享券：通常不返还；\n  - 部分退款：券一般不拆分返还，是否返还按活动规则处理；\n  - 退款后券是否退回，与退款金额到账是两条独立流程，到账时间也可能不同。\n- 我目前没有你的订单信息，还不能确认这张券的具体处理结果，也无法承诺一定退回。\n\n**下一步处理**\n1. 请提供订单号和支付渠道，我先帮你核对订单状态和券的使用情况。\n2. 如果券涉及活动规则或已过期，需要转人工按活动条款核实。\n3. 退款到账后，建议在“我的优惠券”中查看是否已返还；若显示应退未退，可凭订单号转人工核实。\n\n**时效边界**\n退款审核通常 1–3 个工作日，款项退回原支付账户通常 5–7 个工作日，以支付渠道实际处理为准；券的返还时间可能与此不同，需以实际到账和券包显示为准。\n\n方便的话，把订单号和支付渠道发我，我继续帮你查。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=none, scores=[billing=0.93, general=0.10, technical=0.00]",
+        "routing_confidence": 0.93,
+        "escalated": true,
+        "latency_ms": 7955,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.645,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.26519741765271837,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.8,
+        "helpfulness": 0.9,
+        "accuracy": 0.9,
+        "overall": 0.9,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "invoice-after-payment",
+      "query": "付款成功后多久可以拿到电子发票？",
+      "category": "invoice",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "retrieved_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-5",
+        "request_id": "28a8a3d8-a9df-47bd-b0c3-787608953169",
+        "response": "# 电子发票开具时效说明\n\n## 当前说明（依据知识库规则）\n\n- **申请前提**：订单支付成功并完成后，才可以申请电子发票。\n- **开具时效**：发票通常在**申请后 3 个工作日内**开具，并发送到预留邮箱。\n- **金额口径**：发票金额以**实际支付金额**为准，不包含未支付运费或已退款金额。\n- **抬头规则**：\n  - 个人抬头可修正为个人姓名；\n  - 企业抬头需在**开具前**完成修改，并提供正确的企业名称和税号；\n  - 已开具的发票如需改抬头，需先申请红冲再重新开具（属人工审核范围）。\n\n> 注意：时效从“提交开票申请”起算，不是从付款成功起算。付款成功但订单未完成时，通常还不能开票。\n\n## 需要核验的信息\n\n如需我帮你确认具体订单能否开票、开票进度，请提供：\n\n1. 订单号\n2. 支付时间与支付渠道（微信 / 支付宝 / 银行卡 / 企业转账 / 余额）\n3. 实付金额与币种\n4. 发票类型（个人 / 企业普票 / 专票）\n5. 抬头、税号（企业）、接收邮箱\n\n目前我这边**没有收到任何订单信息**，因此还无法确认你具体订单的开票状态。\n\n## 下一步处理\n\n- **自助路径**：在订单详情页 → 申请开票，填写抬头与邮箱后提交，留意邮箱（含垃圾邮件箱）。\n- **超过 3 个工作日仍未收到**：建议提供订单号，转人工核实开票流水与邮箱地址。\n- **需要作废 / 重开 / 改抬头**：需人工审核，尤其是跨月或已报销的发票，无法承诺一定可以修改。\n\n## 时效边界\n\n3 个工作日为常规参考时效，实际以开票系统与邮箱投递情况为准；遇节假日或信息填写有误可能延后。请保留支付凭证，便于后续核对。",
+        "intent": "invoice",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=invoice, group=billing, primary=billing, supporting=none, scores=[billing=0.93, general=0.10, technical=0.00]",
+        "routing_confidence": 0.93,
+        "escalated": true,
+        "latency_ms": 8897,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7977589118302999,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.4137945591514997,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "check_billing_fields"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "invoice-company-title",
+      "query": "企业发票抬头写错了，还来得及直接改吗？",
+      "category": "invoice",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "retrieved_ids": [
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-6",
+        "request_id": "7ea94080-731d-4a3e-82e9-744229664a22",
+        "response": "# 企业发票抬头修改说明\n\n**关键判断点：发票是否已经开具。**\n\n根据电子发票规则（演示）：\n\n- **尚未开具**：企业抬头修改需要在开具前完成，提供正确的企业名称和税号即可，通常可以直接改。\n- **已经开具**：抬头不能直接改，需要先申请**红冲（作废）并重新开具**。这一步属于人工审核范围，我无法直接操作，也不能承诺一定能重开。\n\n## 需要核验的信息\n\n1. 订单号\n2. 开票金额（以实际支付金额为准，不含未支付运费或已退款金额）\n3. 发票类型：电子普票 / 专票 / 纸质票\n4. 当前发票状态：未开具 / 已开具 / 已发送邮箱\n5. 正确的企业名称 + 税号（如需重开）\n6. 开票时间是否跨月、是否已报销\n\n## 当前可判断内容\n\n- 你目前没有提供订单号、开票状态等信息，所以**还不能确认这张发票是“直接改”还是“必须红冲重开”**。\n- 如果发票已开具且已跨月或已报销，重开难度会明显上升，需要人工审核确认。\n\n## 下一步处理\n\n1. 请提供订单号和发票当前状态（是否已收到发票邮件）。\n2. 若未开具：在开票入口修改抬头和税号后提交。\n3. 若已开具：提交红冲重开申请 → 人工/财务审核 → 审核通过后重新开具，新发票通常发送至预留邮箱。\n\n## 时效边界\n\n- 电子发票一般在申请后 **3 个工作日内**开具并发送到预留邮箱。\n- 红冲重开的审核时间以人工/财务实际处理为准，无法承诺具体完成时间。\n\n请把订单号和发票状态发我，我帮你判断走哪条路径。另外提醒：请勿提供支付密码、验证码或完整银行卡号。",
+        "intent": "invoice",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=invoice, group=billing, primary=billing, supporting=none, scores=[billing=0.93, general=0.10, technical=0.00]",
+        "routing_confidence": 0.93,
+        "escalated": false,
+        "latency_ms": 7358,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.8129800449199762,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.3649002245998809,
+          "pattern": 0.75
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "check_billing_fields"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.95,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "payment-failed-page",
+      "query": "页面显示支付失败，但银行卡可能已经扣款，该怎么办？",
+      "category": "payment",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "retrieved_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-7",
+        "request_id": "732f1663-3d92-4c22-bd72-134bc6c311a8",
+        "response": "# 支付失败但可能已扣款：处理建议\n\n**先做一件事：不要连续重复付款。** 在确认订单状态之前再次支付，容易造成同一订单多笔扣款。\n\n## 需要核验的信息\n\n请提供以下信息，我才能继续判断：\n\n1. **订单号**（或交易号）\n2. **扣款金额与币种**\n3. **支付时间**（大概时间也可以）\n4. **支付渠道**（微信、支付宝、银行卡、企业转账、余额）\n5. 银行或支付渠道的**扣款通知或流水摘要**（截图文字即可，不要提供完整卡号、密码、验证码）\n\n目前这四项都还没有提供，所以还无法确认是否真的扣款、是否对应同一订单。\n\n## 当前可判断的内容\n\n- 页面显示“支付失败”**不等于**一定没有扣款，也不等于一定扣款了。两者需要分别核对：**订单侧状态**和**支付渠道侧流水**。\n- 如果订单状态仍是“未支付”，而银行确实有扣款，通常属于支付渠道与订单状态不同步，需要人工核实后处理。\n- 如果订单已显示“已支付”，只是页面提示失败，一般不需要再次付款，保留流水号即可。\n- 仅凭两笔金额不同，**不能**判定为重复扣款；需要对比时间、金额、渠道和订单号。\n\n## 下一步处理路径\n\n1. **先查订单状态**：在“我的订单”中确认该订单是“未支付”还是“已支付”。\n2. **再查渠道流水**：在银行 App 或支付渠道账单中确认是否有一笔“待入账/已扣款”记录。\n3. **按结果分流**：\n   - 订单未支付 + 渠道无扣款 → 可以重新发起支付。\n   - 订单未支付 + 渠道已扣款 → **需要转人工核验**（支付成功但订单未生效，属于升级场景）。\n   - 订单已支付 → 无需重复付款，保留流水号备查。\n4. 若确认存在重复扣款或异常扣款，需提交人工/财务核实，**我无法直接执行退款或账单调整**。\n\n## 时效边界\n\n- 支付渠道的扣款状态有时会延迟同步，建议先等待一段时间再刷新订单页。\n- 若核实后需要退款，退款通常原路退回，到账时间以支付渠道实际处理为准，一般预计 5–7 个工作日，具体需以核验结果为准。\n- 人工核验与退款审核的时长需以实际受理进度为准，我不能承诺具体到账时间。\n\n请把订单号和支付渠道信息发给我，我可以帮你继续核对字段是否齐全，并判断是否需要转人工。",
+        "intent": "payment_issue",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=payment_issue, group=billing, primary=billing, supporting=none, scores=[billing=1.11, general=0.10, technical=0.00]",
+        "routing_confidence": 1.0,
+        "escalated": true,
+        "latency_ms": 8543,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.8204873073713653,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.5274365368568267,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "check_billing_fields"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.95,
+        "accuracy": 1.0,
+        "overall": 0.9625,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "payment-duplicate-charge",
+      "query": "我看到两笔金额不一样，是不是一定重复扣款了？",
+      "category": "payment",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "retrieved_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-8",
+        "request_id": "58417f6b-5c1c-4ac0-8d60-f97a35bbe8df",
+        "response": "**结论：金额不一样，不能直接判定为重复扣款。**\n\n重复扣款通常指同一订单、同一金额、相近时间被扣了两次。两笔金额不同，更可能是不同订单、不同商品、含不同优惠抵扣，或其中一笔含运费/税费。但也存在部分重复（例如同一订单被拆成两笔扣款）的可能，需要核验后才能确认。\n\n**需要核验的信息**\n1. 两笔交易的订单号或交易号（各一笔）\n2. 两笔的扣款金额与币种\n3. 两笔的支付时间（精确到分钟）\n4. 支付渠道（微信 / 支付宝 / 银行卡 / 余额 / 企业转账）\n5. 是否使用了优惠券、余额或分期\n6. 两笔交易的账单截图摘要（可隐去卡号等敏感信息，请勿提供支付密码或验证码）\n\n**当前可判断内容**\n- 仅凭“金额不同”这一点，无法认定为重复扣款，也无法排除。\n- 如果两笔金额、时间都非常接近，且对应同一订单，则重复扣款的可能性上升，需要人工核实。\n- 如果两笔对应不同订单或不同商品，通常属于正常扣款。\n\n**下一步处理路径**\n1. 请提供上述字段，我先核对订单与金额口径（订单金额 / 优惠抵扣 / 实付金额）。\n2. 若初步判断存在重复扣款或“支付成功但订单未生效”，将转人工/财务核实交易流水。\n3. 核实确认为重复扣款后，退款需经人工审核，按原路退回处理，具体时效以支付渠道实际处理为准。\n\n**时效边界**\n- 我无法在此环节承诺退款结果或到账时间。\n- 人工核验与退款审核通常需要一定处理时间，到账时间取决于支付渠道。\n\n请把两笔交易的订单号、金额、时间和支付渠道发我，我继续帮你比对。",
+        "intent": "payment_issue",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=payment_issue, group=billing, primary=billing, supporting=none, scores=[billing=0.93, general=0.10, technical=0.00]",
+        "routing_confidence": 0.93,
+        "escalated": true,
+        "latency_ms": 4935,
+        "knowledge_used": false,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7143931503088837,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.34696575154441867,
+          "pattern": 0.5
+        },
+        "tools_used": [],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.95,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "agent_skipped_retrieval"
+    },
+    {
+      "id": "subscription-cancel-renewal",
+      "query": "自动续费在哪里关闭，关闭后马上失效吗？",
+      "category": "subscription",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0"
+      ],
+      "retrieved_ids": [
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-9",
+        "request_id": "a09cf24d-a74c-4e79-947d-58382b48c1c3",
+        "response": "**需要核验的信息**\n\n这个问题暂时不需要订单号或金额，但为了说明准确，需要确认两点：\n- 你是在哪个平台开通的订阅（EchoMind 网页端 / App / 第三方渠道如微信、支付宝、苹果 App Store）\n- 你希望关闭的是“自动续费”还是“当前订阅本身”\n\n**当前说明**\n\n1. **关闭自动续费通常不会让服务立即失效。** 一般规则是：关闭后不再扣下一期费用，当前已付费的订阅周期仍可使用到该周期结束。具体以你的订阅页面显示为准。\n\n2. **关闭入口通常有两处，建议都检查：**\n   - 平台内：账户设置 → 订阅 / 会员管理 → 自动续费开关\n   - 第三方支付渠道：微信（我 → 服务 → 钱包 → 支付设置 → 自动扣款）、支付宝（我的 → 设置 → 支付设置 → 免密支付/自动扣款）、苹果（设置 → Apple ID → 订阅）\n\n   如果订阅是通过第三方渠道开通的，只在平台内关闭可能不生效，需要在对应渠道的自动扣款协议里一并关闭。\n\n3. **关闭自动续费 ≠ 退款。** 如果本期费用已经扣了，关闭操作只影响下一期，已支付订单是否可退需要按订单状态和退款规则单独审核。\n\n**下一步处理**\n\n- 如果你只是想停止后续扣款：按上面两处入口操作即可，操作后建议截图留存开关状态。\n- 如果你发现已经被扣了一笔续费、想申请退款：请提供订单号、扣款金额与币种、支付时间、支付渠道，我帮你核对订单状态；实际退款需要人工审核，我无法直接承诺结果或到账时间。\n- 如果你在订阅页面找不到开关，告诉我开通渠道，我再帮你确认具体路径。\n\n**时效边界**\n\n关闭自动续费一般即时生效于下一扣款周期；退款审核与到账时间以支付渠道实际处理为准，通常需要数个工作日，具体需核实后确认。",
+        "intent": "billing",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=billing, group=billing, primary=billing, supporting=none, scores=[billing=0.75, general=0.10, technical=0.00]",
+        "routing_confidence": 0.75,
+        "escalated": false,
+        "latency_ms": 5546,
+        "knowledge_used": false,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.595,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.2828894749305018,
+          "pattern": 0.5
+        },
+        "tools_used": [],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 0.9,
+        "overall": 0.925,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "agent_skipped_retrieval"
+    },
+    {
+      "id": "subscription-refund-charged",
+      "query": "刚扣了订阅费，取消后这笔钱会立即退吗？",
+      "category": "subscription",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 0.8503449055347546
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-10",
+        "request_id": "e88fcb6f-1cf6-4755-93a1-41e9ae7d9609",
+        "response": "**需要核验的信息**\n\n要判断这笔订阅费能否退、退多少，需要先确认以下信息：\n\n1. 订单号或交易号\n2. 扣款金额与币种\n3. 扣款时间\n4. 支付渠道（微信、支付宝、银行卡、余额等）\n5. 是否使用过优惠券或余额抵扣\n6. 这笔扣款对应的订阅周期是否已经开始生效\n\n**当前说明**\n\n- 取消订阅和退款是两件事。取消自动续费通常只影响**下一周期**不再扣款，本周期已生效的权益一般保留到到期日，**不代表当前这笔已扣费用会自动退回**。\n- 已扣费用能否退，需要根据订单状态和退款政策核验，目前信息不足，还不能确认结果。\n- 如果这笔扣款刚发生、服务尚未实际使用，处理空间通常更大；如果本周期权益已生效或已使用，一般需要人工审核。\n- 退款金额以**实际支付金额**为准，不是订单原价；如有优惠抵扣，退款金额可能低于标价。\n\n**下一步处理**\n\n1. 请提供上述订单号、金额、时间、支付渠道，我先核对账单字段是否完整、金额是否一致。\n2. 同时请在订阅管理页面确认自动续费是否已关闭，并检查第三方支付渠道（如微信/支付宝的自动扣款协议）是否也已解约，避免下期继续扣款。\n3. 若确认需要退回这笔已扣费用，属于实际退款操作，**需要提交人工审核**，由财务核验订单与支付流水后处理，我无法直接承诺退款成功。\n\n**时效边界**\n\n- 审核与退款到账时间以人工核验结果和支付渠道实际处理为准，通常为原路退回，具体时长需以渠道处理进度为准。\n- 建议保留支付凭证截图，便于后续核对。\n\n请先把订单号和扣款信息发我，我帮你继续核对。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=none, scores=[billing=0.93, general=0.10, technical=0.00]",
+        "routing_confidence": 0.93,
+        "escalated": false,
+        "latency_ms": 8120,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.595,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.36623351038235724,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.95,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "account-email-change",
+      "query": "修改账户邮箱需要验证哪些内容？",
+      "category": "account",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "retrieved_ids": [
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-11",
+        "request_id": "6f52ad55-8898-4fb2-986c-496627c5ec7c",
+        "response": "# 修改账户邮箱的验证要求\n\n根据知识库《账户资料修改（演示）》的说明，修改邮箱需要完成以下两步验证：\n\n**1. 验证当前登录状态**\n- 需在已登录状态下操作，系统会先确认当前登录身份有效。\n\n**2. 新邮箱验证码校验**\n- 向你要绑定的**新邮箱**发送验证码，输入正确后才会生效。\n\n**补充说明**\n- 修改手机号是另一条路径：需在**账户安全页面**完成身份验证。\n- 客服**不会**向你索要密码、短信验证码或完整登录令牌；如有人以\"协助改邮箱\"为由索要这些信息，请勿提供。\n- 修改成功后，新的通知和账单会发送到**新邮箱**，旧邮箱不再接收账单。因此如果账单/发票需要继续送达，请留意切换时点。\n\n**操作路径建议**\n- 登录后进入账户设置（资料/安全相关页面）→ 邮箱修改 → 输入新邮箱 → 填写新邮箱收到的验证码 → 提交。\n\n**边界说明**\n- 我这边只能提供政策说明，无法代为修改邮箱或查看你的账户验证状态。\n- 如果你在修改过程中遇到验证码收不到、提示身份验证失败等情况，请提供**具体报错提示或错误码**，我可以帮你进一步核对处理路径；涉及账户归属争议或安全异常（如怀疑账号被他人操作），需要转人工安全审核处理。\n\n需要我帮你确认\"改邮箱后账单/发票接收方如何同步\"这类账单相关问题吗？",
+        "intent": "account",
+        "intent_group": "account",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=account, group=account, primary=billing, supporting=none, scores=[billing=0.75, general=0.10, technical=0.00]",
+        "routing_confidence": 0.75,
+        "escalated": true,
+        "latency_ms": 9457,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7639767824619588,
+        "intent_source_scores": {
+          "llm": 0.9,
+          "embedding": 0.2948839123097942,
+          "pattern": 0.75
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.975,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "account-old-email-bills",
+      "query": "邮箱改好以后，旧邮箱还会收到账单吗？",
+      "category": "account",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "retrieved_ids": [
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-12",
+        "request_id": "8b98e65f-d937-4c8c-a409-75baab2a7422",
+        "response": "**当前说明**\n\n根据账户资料修改规则：邮箱修改成功后，新的通知和账单会发送到**新邮箱**，旧邮箱不会继续接收账单。\n\n不过有两点需要留意：\n\n1. **修改是否已完全生效**：如果新邮箱验证码校验尚未完成，修改可能未生效，账单仍会发到旧邮箱。建议在账户安全页面确认邮箱已显示为新地址。\n2. **已开出的历史账单/发票**：修改邮箱只影响后续发送，之前已发送到旧邮箱的账单或发票不会自动重发或撤回。如需把历史发票重新发送到新邮箱，属于发票相关处理，需要人工审核。\n\n**下一步处理**\n\n- 如果修改后仍收到旧邮箱账单，请提供：新邮箱地址、收到账单的时间、对应订单号（如有），我可以协助判断是延迟发送还是发送地址未更新。\n- 如需变更发票接收方或重发历史发票，需要人工审核，请提供订单号、开票金额、原抬头与新接收邮箱。\n\n**时效边界**\n\n账单发送地址的更新通常随账户资料生效，但已排期或已发出的账单可能仍按原地址发送，具体以实际发送记录为准。\n\n另外提醒：修改邮箱后，建议同时检查第三方支付渠道（如微信、支付宝、银行卡）的账单通知设置，那部分通知由支付渠道控制，不受 EchoMind 账户邮箱影响。",
+        "intent": "account",
+        "intent_group": "account",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=account, group=account, primary=billing, supporting=none, scores=[billing=0.93, general=0.10, technical=0.00]",
+        "routing_confidence": 0.93,
+        "escalated": false,
+        "latency_ms": 7619,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7037944735792131,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.29397236789606557,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 0.9,
+        "overall": 0.925,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "security-frozen-account",
+      "query": "账号被冻结了，自己能解冻还是必须找人工？",
+      "category": "security",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0"
+      ],
+      "retrieved_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-13",
+        "request_id": "34cca8d6-ae5d-497b-877d-b6db3a5c489f",
+        "response": "## 结论：账号冻结无法自助解冻，必须走人工身份核验\n\n根据知识库《账户安全（演示）》条目：**账号被冻结时，需要提交身份核验并由人工处理**，没有自助解冻入口。可以自助的只有「忘记密码」场景（密码找回），这与冻结是两回事。\n\n### 当前可判断内容\n- 冻结 ≠ 密码问题：密码找回/重置不会解除冻结状态。\n- 解冻属于身份核验类操作，超出我（账单服务）的可执行范围，需要转人工。\n- 我无法查询冻结原因、冻结时间或解冻结果——这些需要人工在后台核验。\n\n### 需要你准备的信息（提交人工时用）\n1. 账号标识（注册邮箱或手机号，**不要提供密码、短信验证码、完整登录令牌**）\n2. 冻结发生的大致时间\n3. 冻结前是否有异常迹象：陌生登录提醒、异地登录、设备变更、异常扣费通知\n4. 若收到过冻结通知邮件/站内信，其中的请求编号或错误码\n5. 你希望恢复的账号用途（是否涉及订阅/账单，便于我这边同步处理）\n\n### 下一步处理路径\n1. **安全自查（建议先做）**：若怀疑账号被盗，先修改密码、退出其他设备、检查已授权应用。\n2. **提交人工核验**：通过客服工单/在线人工渠道提交上述信息，由人工完成身份核验后解冻。\n3. **账单侧联动**：如果冻结期间涉及订阅扣费、自动续费或发票接收问题，我可以先帮你梳理账单场景；但**实际退款、重复扣款核查、发票作废重开**同样需要人工审核，我无法直接执行。\n\n### 时效边界\n- 解冻时效取决于人工核验进度，我无法承诺具体时长或结果。\n- 我这边不接入冻结/解冻操作，也不会声称已代为提交。\n\n需要我同时帮你确认「冻结期间订阅是否仍在扣费、如何停止后续扣款」吗？告诉我账号下的订阅产品和大致扣费时间即可。",
+        "intent": "account_security",
+        "intent_group": "account",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=account_security, group=account, primary=billing, supporting=none, scores=[billing=0.75, general=0.10, technical=0.00]",
+        "routing_confidence": 0.75,
+        "escalated": true,
+        "latency_ms": 10295,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.6876461353698313,
+        "intent_source_scores": {
+          "llm": 0.9,
+          "embedding": 0.2882306768491569,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "security-strange-login",
+      "query": "发现有人在陌生设备登录，我第一步应该做什么？",
+      "category": "security",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0"
+      ],
+      "retrieved_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-14",
+        "request_id": "30da0d47-bb22-44de-b609-5071d1e9b9f1",
+        "response": "# 陌生设备登录：第一步该做什么\n\n**第一步：立即修改账户密码**（通过官方登录页的“忘记密码/密码找回”入口操作，不要点任何邮件或短信里的链接）。\n\n紧接着按顺序做这三件事：\n\n1. **退出其他设备**：在账户安全页面选择“退出所有其他设备/会话”，把陌生设备的登录踢下线。\n2. **检查已授权应用**：在账户安全页面查看第三方授权列表，撤销不认识的授权。\n3. **检查账单与订阅变动**：确认是否有非本人操作的订阅、续费或账单通知被改动（例如账单接收邮箱被改）。\n\n## 安全提醒\n- 客服**不会**索要你的密码、短信验证码或完整登录令牌，任何索要的都是诈骗。\n- 请保留**发生时间、设备信息、请求编号**等记录，但**不要上传完整令牌**。\n\n## 如果无法登录\n- 先走密码找回流程。\n- 如果账号已被冻结，需要提交身份核验，由**人工审核处理**，我这边无法直接解冻或修改账户。\n\n## 关于账单侧\n如果后续发现陌生登录期间产生了扣款、订阅变更或账单接收邮箱被改，请把**订单号、金额与币种、支付时间、支付渠道**发给我，我可以帮你核对账单字段并说明处理路径。涉及实际退款、重复扣款、发票作废/重开，都需要转人工审核，我无法承诺退款成功或到账时间。\n\n需要我帮你核对某笔具体账单吗？",
+        "intent": "account_security",
+        "intent_group": "account",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=account_security, group=account, primary=billing, supporting=none, scores=[billing=0.75, general=0.10, technical=0.00]",
+        "routing_confidence": 0.75,
+        "escalated": true,
+        "latency_ms": 9512,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.6649999999999999,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.316862125262239,
+          "pattern": 0.75
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "technical-http-401",
+      "query": "调用接口一直返回 HTTP 401，应该检查什么？",
+      "category": "technical",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0"
+      ],
+      "retrieved_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-15",
+        "request_id": "dccc7e9a-d7d2-426b-89e3-2f2a35857d8e",
+        "response": "## 现象复述\n\n你调用接口时持续返回 **HTTP 401**。401 的含义是**认证失败**，也就是服务端没有认可这次请求的身份凭证；它通常不是权限不足（那是 403），也不是服务端内部异常（那是 500）。\n\n## 可能原因（按概率排序）\n\n1. **Token / API Key 过期、被吊销或已轮换**（最常见）\n2. **凭证没有正确带上**：请求头字段名写错、值多了空格或换行、`Bearer ` 前缀缺失、被代理/网关剥离\n3. **签名或时间戳问题**：签名串拼接顺序不对、时间戳超出允许窗口、时区偏差、签名密钥与当前环境不匹配\n4. **环境错配**：测试环境的 Key 打到了生产域名（或反之），或账号本身处于未激活/冻结状态\n5. **账号登录态失效**：涉及用户态接口时，会话已过期或被其他设备退出\n\n## 排查步骤（从低风险开始）\n\n**第 1 步：确认凭证是否有效**\n用同一个 Key 调用一个最简单的鉴权接口（如获取当前用户信息）。如果这里也 401，问题在凭证本身；如果这里正常，问题在具体接口的签名或参数。\n> 注意：不要把完整 Key 贴到聊天或工单里，只需说明前后各 3–4 位。\n\n**第 2 步：核对请求头**\n检查 `Authorization` 字段名拼写、是否包含 `Bearer ` 前缀、值前后是否有空格/换行、是否被复制时截断。这是 401 里最高频的低级原因。\n\n**第 3 步：核对签名与时间戳**\n确认签名算法、参数排序、编码方式与文档一致；确认服务器时间与本地时间偏差在允许窗口内（一般 5 分钟内）。时间戳过期会稳定返回 401。\n\n**第 4 步：确认环境与账号状态**\n确认请求域名（测试/生产）与 Key 所属环境一致；确认账号未被冻结、未修改过密码导致旧 Token 失效。\n\n**第 5 步：最小复现**\n用 curl 或 Postman 发一个最小请求，排除业务代码里拦截器、重试逻辑、代理层改写请求头的影响。\n\n## 验证方式\n\n修正后重发同一请求，返回 200 即解决。若仍 401，请记录**响应体里的错误信息**（很多平台会区分 `invalid_token` / `token_expired` / `invalid_signature`），这个字段能直接定位到上面哪一条。\n\n## 需要你补充的信息\n\n- 是**所有接口**都 401，还是**只有某个接口**？\n- 用的是 **API Key 还是用户登录 Token**？\n- 响应体里的 `error` / `message` 字段内容是什么？\n- 最近是否**轮换过密钥、改过密码、切换过环境或域名**？\n- 发生时间，以及是否**稳定复现**。\n\n## 升级条件\n\n如果凭证确认有效、请求头与签名都核对无误，但依然稳定 401，这需要查服务端认证日志才能定位，属于后台操作范畴，建议转二线技术处理，并提供：接口路径、发生时间（精确到分钟）、request_id、响应体摘要。**我不会代为查询服务端日志，也不会读取你的密钥。**",
+        "intent": "technical_login",
+        "intent_group": "technical",
+        "agent_type": "technical",
+        "agent_types": [
+          "technical"
+        ],
+        "primary_agent": "technical",
+        "supporting_agents": [],
+        "routing_reason": "intent=technical_login, group=technical, primary=technical, supporting=none, scores=[technical=1.13, general=0.10, billing=0.00]",
+        "routing_confidence": 1.0,
+        "escalated": false,
+        "latency_ms": 10212,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [
+            "401",
+            "HTTP"
+          ],
+          "amount": []
+        },
+        "intent_confidence": 0.7818503217437387,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.3342516087186934,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "lookup_error_code",
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "technical-http-403",
+      "query": "HTTP 403 是不是账号密码错误？",
+      "category": "technical",
+      "difficulty": "medium",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0"
+      ],
+      "retrieved_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-16",
+        "request_id": "6cb2375e-2622-41de-b9dd-17f16e25f7a7",
+        "response": "**现象复述**：你遇到 HTTP 403，想确认它是不是“账号密码错误”。\n\n**结论：不是。** 403 表示**权限不足**，即服务端已经识别了你的身份，但该身份没有访问该资源的权限。账号密码错误通常返回 **401（认证失败）**，两者含义不同。\n\n**可能原因（按可能性排序）**\n1. 账号或套餐权限不足：功能未开通、订阅到期、角色权限不够。\n2. 资源权限不足：访问的是他人资源，或该资源未授权给当前账号。\n3. IP 白名单限制：服务端或接口配置了 IP 白名单，当前出口 IP 不在名单内。\n4. 接口未开通或调用方应用未授权该接口。\n5. 代理、VPN 或公司网络导致出口 IP 变化，触发白名单拦截。\n\n**排查步骤（低风险，按顺序）**\n1. **确认返回体内容**：查看 403 响应体里的 message 或 code 字段，通常能区分“权限不足”“IP 不允许”“功能未开通”。这一步能最快缩小范围。\n2. **确认账号状态与套餐**：登录 EchoMind 账户安全或订阅页面，确认账号正常、订阅未到期、目标功能已开通。\n3. **确认资源归属**：如果是访问某个具体资源（订单、账单、项目），确认该资源属于当前登录账号。\n4. **确认网络出口**：如果使用代理、VPN 或公司网络，切换到普通网络重试一次；若切换后正常，基本可判定为 IP 白名单问题。\n5. **确认凭证类型**：如果是 API 调用，确认使用的是对应环境的 API Key，且该 Key 已开通目标接口权限（密钥只需核对前后几位，不要外发完整值）。\n\n**验证方式**：完成上述任一步后重新发起同一请求。若返回 200 或业务正常数据，说明问题已解决；若仍为 403，请记录响应体原文。\n\n**需要补充的信息**（便于进一步定位）\n- 403 的完整响应体（可隐去密钥）\n- 触发场景：浏览器页面操作，还是 API 调用？如果是 API，请提供请求方法、路径、request_id\n- 发生时间、是否稳定复现\n- 最近是否改过套餐、权限、网络或密钥\n\n**升级条件**：如果确认账号与套餐均正常、网络无代理，仍持续 403，且影响多名用户或核心业务，需要后台查询权限配置与访问日志，建议转二线技术处理，并附上上述响应体与 request_id。",
+        "intent": "technical_login",
+        "intent_group": "technical",
+        "agent_type": "technical",
+        "agent_types": [
+          "technical"
+        ],
+        "primary_agent": "technical",
+        "supporting_agents": [],
+        "routing_reason": "intent=technical_login, group=technical, primary=technical, supporting=none, scores=[technical=0.95, general=0.10, billing=0.00]",
+        "routing_confidence": 0.95,
+        "escalated": false,
+        "latency_ms": 9120,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [
+            "403",
+            "HTTP"
+          ],
+          "amount": []
+        },
+        "intent_confidence": 0.595,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.29652865017500385,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "lookup_error_code",
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "technical-http-500",
+      "query": "接口报 500，客服应该先收集哪些排查信息？",
+      "category": "technical",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0"
+      ],
+      "retrieved_ids": [
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-17",
+        "request_id": "869d302f-5f36-40bb-befa-c125ece84237",
+        "response": "# 接口 500：客服首轮应收集的信息清单\n\n**现象复述**：你遇到接口返回 HTTP 500。500 表示**服务端处理异常**，不能直接断定是用户侧还是平台侧单方原因，需要靠请求标识和时间点去后台定位。\n\n## 一、必须优先收集（缺这些基本无法定位）\n\n| 序号 | 信息项 | 说明 |\n|---|---|---|\n| 1 | **request_id / 请求编号** | 最关键。让用户从响应体、响应头（如 `X-Request-Id`）或客户端日志里找 |\n| 2 | **发生时间**（精确到分钟，含时区） | 用于后台按时间窗口捞日志 |\n| 3 | **是否持续复现** | 偶发 / 必现 / 特定条件下必现，决定排查方向 |\n| 4 | **接口路径 + 请求方法** | 如 `POST /api/v1/xxx`，不要只写“接口报错” |\n| 5 | **响应体摘要** | 500 的 body 里常带内部错误码或 trace 片段，比状态码有用得多 |\n\n## 二、按需补充（用于缩小根因范围）\n\n6. **请求参数摘要**：字段名 + 类型即可，**不要**让用户贴完整密钥、Token、密码、身份证等敏感值；密钥只留前后各 3–4 位。\n7. **调用环境**：服务端 / 浏览器 / App；SDK 或客户端版本号；操作系统。\n8. **网络环境**：公司网络、代理、VPN、出口 IP 是否近期变化（这类常表现为超时或连接失败，但也会连带 5xx）。\n9. **影响范围**：单个用户 / 部分用户 / 全部用户；单个接口 / 多个接口 / 全站。**这是判断严重度的核心**。\n10. **最近变更**：是否刚升级版本、改配置、换域名、轮换密钥、发布新代码。\n11. **最小复现方式**：能提供 curl 或最小请求体最好；不能提供就记录“第几次调用开始失败”。\n12. **失败频率与请求峰值**：偶发超时类问题需要这个来判断是否限流或依赖抖动。\n\n## 三、给用户的话术建议\n\n> “500 是服务端处理异常，需要后台日志才能定位。麻烦提供：① 响应里的 request_id；② 失败发生的具体时间；③ 接口路径和请求方法；④ 是每次都失败还是偶尔失败；⑤ 影响的是你一个人还是团队其他人也这样。**请不要发送完整 API Key 或密码**，密钥只需告诉我前后几位。”\n\n## 四、验证与升级\n\n- **验证方式**：拿到 request_id 后，让用户在相同环境重试一次并记录新的 request_id，对比是否同一错误；若参数调整后不再报错，说明是参数触发。\n- **立即升级二线的条件**（满足任一即转人工/二线，并保留失败请求的 request_id 与日志时间点）：\n  - 生产环境**大面积不可用**或核心业务（登录、支付、数据写入）中断；\n  - 出现**数据丢失、数据错乱**；\n  - 需要**查询服务端日志、数据库或后台人工操作**——这类我这边无法读取，必须由有权限的技术人员核查依赖服务、参数与服务端日志；\n  - 疑似**安全事件**（密钥泄露、异常登录、越权）。\n\n## 五、还需要你补充的信息\n\n目前我这边只有“错误码 500”，**没有 request_id、接口路径、发生时间、影响范围**，所以还无法判断根因。请把上面第 1–5 项补齐，我可以帮你进一步缩小范围并判断是否需要立即升级。",
+        "intent": "technical_crash",
+        "intent_group": "technical",
+        "agent_type": "technical",
+        "agent_types": [
+          "technical"
+        ],
+        "primary_agent": "technical",
+        "supporting_agents": [],
+        "routing_reason": "intent=technical_crash, group=technical, primary=technical, supporting=none, scores=[technical=1.13, general=0.10, billing=0.00]",
+        "routing_confidence": 1.0,
+        "escalated": true,
+        "latency_ms": 11571,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [
+            "500"
+          ],
+          "amount": []
+        },
+        "intent_confidence": 0.595,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.2865509325585011,
+          "pattern": 0.5,
+          "refined_by_pattern": 0.5
+        },
+        "tools_used": [
+          "lookup_error_code",
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 1.0,
+        "accuracy": 0.95,
+        "overall": 0.9875,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "order-no-tracking-seven-days",
+      "query": "订单显示已发货，但七天都没有物流更新怎么办？",
+      "category": "order",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "retrieved_ids": [
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-18",
+        "request_id": "4001abe1-afc3-49da-a502-378cc585a7f2",
+        "response": "已发货但 7 天没有物流更新，这种情况可以提交查件，由物流方核实包裹去向。按我们的规则，物流信息一般在发货后 24 小时内更新；超过 7 天仍无更新，就属于可以发起查件的范围。\n\n为了帮你继续处理，需要你补充：\n\n1. 订单号（或下单时间）\n2. 商品或服务名称（可选，便于核对）\n\n拿到订单号后，我可以帮你确认订单当前状态，并说明查件的下一步流程。另外提醒一下：查件结果需要物流方核实，我无法在这里直接承诺包裹一定找到或一定补发，具体处理结果以核实结论为准。\n\n如果这个订单金额较大或时间比较紧急，也可以直接转人工客服跟进。需要我帮你转接吗？",
+        "intent": "logistics",
+        "intent_group": "query",
+        "agent_type": "general",
+        "agent_types": [
+          "general"
+        ],
+        "primary_agent": "general",
+        "supporting_agents": [],
+        "routing_reason": "intent=logistics, group=query, primary=general, supporting=none, scores=[general=0.89, technical=0.00, billing=0.00]",
+        "routing_confidence": 0.89,
+        "escalated": true,
+        "latency_ms": 7295,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.715,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.4276668660663895,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "suggest_required_fields"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 1.0,
+        "accuracy": 1.0,
+        "overall": 0.975,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "order-after-delivery-service",
+      "query": "订单已经签收了，还能申请售后吗？",
+      "category": "order",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "retrieved_ids": [
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-19",
+        "request_id": "c9fe0cf8-4625-4276-9483-02a617e26f5c",
+        "response": "# 已签收订单的售后申请\n\n**结论：可以申请。** 知识库明确说明：订单签收后仍可依据退款政策申请售后，签收本身并不关闭售后入口。\n\n不过，能否通过审核取决于具体退款政策条款，而政策原文在检索结果中被截断了，我无法据此判断你这一单是否符合条件。\n\n## 需要你补充的核验信息\n\n目前订单号、金额、日期、支付渠道都为空，无法做任何账单层面的核对：\n\n| 字段 | 用途 |\n|---|---|\n| 订单号 | 定位订单与签收时间 |\n| 签收日期 | 判断是否在售后时效内 |\n| 实付金额与币种 | 区分订单金额与实付金额 |\n| 支付渠道 | 判断退款原路退回的路径 |\n| 售后诉求 | 退货退款、仅退款、换货或维修 |\n\n## 当前可判断与不可判断\n\n- ✅ 可判断：签收后仍可提交售后申请，不存在“签收即失效”的规则。\n- ⚠️ 不可判断：你这单是否在时效内、是否符合退款条件、能退多少。这些都需要订单系统核验，我这边没有接入订单、支付或退款系统，无法查询实际状态。\n\n## 下一步\n\n1. 请提供订单号和签收日期，我帮你确认时效口径和需要走的流程。\n2. 若涉及**实际退款、重复扣款、支付成功但订单未生效、发票作废重开、企业合同或大额订单**，需要转人工审核，我无法直接操作退款或修改账单。\n\n另外提醒：如果商品存在质量问题或与描述不符，通常不受普通无理由退货时效限制，但需要提供凭证，建议一并说明。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=none, scores=[billing=0.75, general=0.22, technical=0.00]",
+        "routing_confidence": 0.75,
+        "escalated": true,
+        "latency_ms": 7466,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.595,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.2565790028953927,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "check_billing_fields"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.95,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "shipping-address-after-dispatch",
+      "query": "订单已经发货了，还能直接修改收货地址吗？",
+      "category": "shipping",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0"
+      ],
+      "retrieved_ids": [
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-20",
+        "request_id": "02819c48-706c-4041-babd-02e05f822c84",
+        "response": "**结论：订单一旦显示“已发货”，通常无法直接在系统里修改收货地址。** 修改地址需要订单系统核验订单是否仍处于“尚未发货”状态，已发货的订单一般不再支持自助修改。\n\n不过还有两种可行的处理方向：\n\n1. **联系承运方尝试拦截或改派**：部分快递支持在派送前申请改地址或转寄，能否成功取决于承运方规则和包裹当前所在环节，无法保证一定成功。\n2. **联系客服协助处理**：由客服向物流方发起拦截或改派申请，同样需要看实际物流状态。\n\n如果你希望我帮你继续判断，请补充以下信息（用于核对订单状态，不需要提供密码或验证码）：\n\n- 订单号\n- 下单时间或商品名称\n- 当前物流显示的最新节点（例如“已揽收”“运输中”“派送中”）\n\n另外提醒：如果包裹已经进入派送或已签收，改地址基本不可行，届时可以考虑签收后按售后政策处理。需要我帮你查一下具体订单吗？",
+        "intent": "logistics",
+        "intent_group": "query",
+        "agent_type": "general",
+        "agent_types": [
+          "general"
+        ],
+        "primary_agent": "general",
+        "supporting_agents": [],
+        "routing_reason": "intent=logistics, group=query, primary=general, supporting=none, scores=[general=0.77, technical=0.00, billing=0.00]",
+        "routing_confidence": 0.77,
+        "escalated": false,
+        "latency_ms": 7722,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.595,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.31764055532639357,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "inspect_request_context"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.95,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "handoff-urgent-account-security",
+      "query": "账号被盗而且有资金争议，我要人工处理，不要只给通用建议。",
+      "category": "handoff",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0"
+      ],
+      "retrieved_ids": [
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-21",
+        "request_id": "17587657-5b4f-4082-b62f-107e24b23325",
+        "response": "这个问题需要人工客服继续核验，以下信息可用于交接：\n\n升级原因：用户请求人工协助或超出当前自动处理范围\n优先级：优先\n已知信息：暂无可交接的订单、金额或错误码等信息\n\n系统尚未接入人工工单队列，以上仅为交接摘要，未创建或提交工单。请通过现有客服渠道联系人工。请不要发送密码、短信验证码或完整密钥。",
+        "intent": "human_handoff",
+        "intent_group": "escalation",
+        "agent_type": "escalation",
+        "agent_types": [
+          "escalation"
+        ],
+        "primary_agent": "escalation",
+        "supporting_agents": [],
+        "routing_reason": "意图为 human_handoff，触发升级路由",
+        "routing_confidence": 0.8,
+        "escalated": true,
+        "latency_ms": 2400,
+        "knowledge_used": false,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.6649999999999999,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.2567175299043349,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "create_handoff_summary"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.6,
+        "helpfulness": 0.7,
+        "accuracy": 1.0,
+        "overall": 0.825,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "agent_skipped_retrieval"
+    },
+    {
+      "id": "multi-refund-shipping-fee",
+      "query": "已发货订单退款时，我寄回去的运费谁承担？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-22",
+        "request_id": "3713bffe-7798-4602-8ec2-4f22f96e281d",
+        "response": "# 已发货订单退货运费承担说明\n\n## 当前可判断内容（依据知识库规则）\n\n运费由谁承担，**取决于退款原因**，不是按“是否已发货”来划分：\n\n| 退款原因 | 退货运费承担方 |\n|---|---|\n| 无理由退货（个人原因、不喜欢等） | 由用户承担 |\n| 商品质量问题、商品与描述不符 | 由平台承担 |\n\n另外，**原运费是否退还**也按同一逻辑判断：无理由退货时原运费不退，质量问题导致退货时原运费随退款一并处理。\n\n## 需要核验的信息\n\n要给出针对你这笔订单的确定结论，还需要：\n\n1. **订单号**\n2. **退款原因**（无理由 / 质量问题 / 描述不符 / 其他）\n3. **是否已签收**、签收时间（关系到是否在 7 个自然日售后时效内）\n4. **寄回运费的金额与支付凭证**（若你已垫付，需保留快递单和付款记录）\n5. 支付渠道（用于说明退款路径）\n\n## 下一步处理\n\n- **质量问题或描述不符**：请提供订单号 + 问题凭证（照片、描述差异截图），我会协助提交运费承担申请。**运费补偿属于实际资金处理，需人工审核**，我无法直接承诺补偿金额或到账时间。\n- **无理由退货**：寄回运费由你承担，原运费按规则不退；退款金额以实付金额为准，不是订单原价。\n- **已垫付运费想追回**：需人工核验订单状态与责任归属后处理。\n\n## 时效边界\n\n- 退款审核与运费补偿均需人工/财务核验，**通常需要数个工作日**，具体以审核结果为准。\n- 退款通过后原路退回，到账时间以支付渠道实际处理为准，不同渠道差异较大。\n\n请把订单号和退款原因发我，我继续帮你判断这笔运费该由谁承担。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=none, scores=[billing=0.93, general=0.22, technical=0.00]",
+        "routing_confidence": 0.93,
+        "escalated": false,
+        "latency_ms": 9679,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7487551650952329,
+        "intent_source_scores": {
+          "llm": 0.9,
+          "embedding": 0.3437758254761643,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.95,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "multi-payment-refund-delay",
+      "query": "支付页面报错后我申请了退款，到账时间怎么判断？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0",
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-23",
+        "request_id": "a6b8c562-b769-43dc-adbe-36ee174d0c34",
+        "response": "退款到账时间不能只看“已申请退款”，需要分阶段判断，并且要先确认您这笔退款目前处于什么状态。\n\n**一、常规时效参考**\n1. 退款审核：从退款申请提交成功起算，通常需要 1–3 个工作日。\n2. 原路退回：审核通过后才开始计算，通常需要 5–7 个工作日到账，具体以支付渠道实际处理为准。\n3. 合计参考约 6–10 个工作日，不含周末和节假日。\n\n**二、判断进度的步骤**\n1. 先确认退款申请是否真的提交成功：到「订单详情 → 退款/售后」查看是否有退款单号及当前状态（待审核、审核通过、已退款、已关闭）。如果查不到退款单，说明申请可能未成功，需要重新提交。\n2. 再确认订单支付状态：如果订单显示“未支付”，说明当时支付可能并未成功，通常不存在退款到账问题，只需确认订单未生效或重新下单；如果订单显示“已支付”但页面报错，请保留支付渠道流水号。\n3. 按时间点核对：提交后 3 个工作日内，状态应变为“审核通过”或“已退款”；审核通过后 7 个工作日内，款项应到达原支付账户。建议同时查看银行或支付渠道的账单明细，部分渠道到账不会单独通知。\n\n**三、您这种“支付页面报错后申请退款”的情况需要特别核实**\n- 如果报错时实际未扣款，就不存在退款到账问题，只需确认订单未生效；\n- 如果报错时已扣款成功，则属于“支付成功但订单未生效”的情形，需要人工核验支付流水与订单状态，不能仅按普通退款时效推算。\n\n**四、需要您补充的信息**\n请提供：订单号或退款单号（订单号可只给后几位）、支付时间、支付渠道（微信、支付宝、银行卡等）、实付金额与币种、退款申请提交日期、当前退款状态，以及支付页面报错的具体提示文字或错误码（如有）。请勿提供支付密码、验证码或完整卡号。\n\n**五、需要进一步核验的情况**\n如果超过 10 个工作日仍未到账、订单显示已支付但查不到退款单、疑似重复扣款，或支付报错后订单状态与实际扣款不一致，需要转人工进一步核验支付流水和退款流水号。仅凭两笔金额不同不能判定为重复扣款。另提醒：支付报错后不要连续重复付款，避免产生多笔扣款；如已重复支付，请保留每笔流水号一并提交核验。\n\n目前还无法确认您这笔退款的具体状态和到账日期，实际退款结果以审核及支付渠道处理为准。请先把订单号、支付渠道和退款申请页面显示的状态发我，我继续帮您核对。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing",
+          "technical"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [
+          "technical"
+        ],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=technical, scores=[billing=1.11, technical=0.18, general=0.10]",
+        "routing_confidence": 1.0,
+        "escalated": true,
+        "latency_ms": 17909,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.645,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.39193090083481036,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "check_billing_fields"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.85,
+        "helpfulness": 0.9,
+        "accuracy": 0.95,
+        "overall": 0.925,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "multi-invoice-payment",
+      "query": "订单状态显示支付失败，但我想给已经完成的订单开发票，怎么办？",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "retrieved_ids": [
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.4,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-24",
+        "request_id": "db52934f-e493-48e9-b74d-e601690538d6",
+        "response": "# 发票问题说明\n\n先说明一个关键点：**“订单状态显示支付失败”和“已完成订单”这两个状态本身是矛盾的**，需要先确认你实际指的是哪一笔订单。开票的前提是订单支付成功且已完成，因此这一步必须先核实清楚。\n\n## 需要核验的信息\n\n1. **订单号**（或交易号）\n2. **支付时间**和**支付渠道**（微信、支付宝、银行卡、企业转账、余额）\n3. **实付金额与币种**（是否使用过优惠券或余额抵扣）\n4. **发票信息**：发票类型（个人或企业、电子或纸质）、抬头、税号、接收邮箱\n5. 如果涉及多笔订单合并开票，请说明**订单范围**\n\n目前你还没有提供以上任何字段，因此我暂时无法判断这笔订单是否具备开票条件。\n\n## 当前可判断的内容\n\n根据电子发票规则（演示）：\n\n- 电子发票需**订单支付成功并完成后**才可申请，通常在申请后 **3 个工作日内**开具并发送至预留邮箱。\n- 发票金额以**实际支付金额**为准，不包含未支付运费或已退款金额。\n- 个人抬头可修正为个人姓名；**企业抬头修改需在开具前完成**，并提供正确的企业名称和税号。\n- 已开具发票如需改抬头，需先申请**红冲后重新开具**。\n\n因此，如果系统确实显示“支付失败”，该订单很可能**不满足开票条件**；如果实际已扣款成功，则属于“支付成功但订单状态未生效”的异常，需要人工核实。\n\n## 下一步处理路径\n\n- **情况 A：你确认这笔订单已实际付款成功**（有扣款记录），但订单状态显示支付失败 → 这属于支付状态异常，需要转人工或财务核实支付流水，确认后再处理开票。\n- **情况 B：确实未支付成功** → 该订单无法开票，需要重新下单支付后再申请发票。\n- **情况 C：你想开票的是另一笔已完成的订单** → 请提供那笔订单的订单号，我按正常开票流程帮你确认所需材料。\n\n## 时效边界\n\n- 开票时效：申请后通常 3 个工作日内开具，以实际处理为准。\n- 发票红冲重开、跨月发票、企业专票、抬头变更等，均需**人工审核**，无法在此直接承诺处理结果。\n\n请先回复我：**这笔订单是否实际扣款成功？扣款金额、时间和渠道分别是什么？** 我据此判断走开票流程还是支付异常核实流程。",
+        "intent": "invoice",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=invoice, group=billing, primary=billing, supporting=none, scores=[billing=1.11, general=0.22, technical=0.00]",
+        "routing_confidence": 1.0,
+        "escalated": true,
+        "latency_ms": 8588,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.595,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.44980282418539946,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "check_billing_fields"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.85,
+        "helpfulness": 0.9,
+        "accuracy": 0.95,
+        "overall": 0.925,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "unanswerable-warranty-period",
+      "query": "你们卖的智能手表保修期到底是多少年？",
+      "category": "unanswerable",
+      "difficulty": "hard",
+      "answerable": false,
+      "expected_abstain": true,
+      "gold_ids": [],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "6ae4f07198afd4c07c8d46876c1b64f8453baae99639cce444a62778e3358c3d:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "0285ed802137dc121c388cdf23867d1ad0ffb1574001c2023b5d1b118884a950:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        },
+        "3": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        },
+        "5": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-25",
+        "request_id": "386b84ac-f493-4ab4-ba4d-494747e0d814",
+        "response": "关于智能手表的具体保修年限，我这边暂时没能确认到准确数字。\n\n**当前情况：**\n- 知识库里目前只有订单物流、退款政策、订阅续费等条目，**没有查到智能手表保修期/质保年限的明确条款**。\n- 保修期通常与具体型号、购买渠道和购买时间相关，不同型号可能不一致。\n\n**建议下一步（任选其一）：**\n1. 提供你的**订单号或手表型号**，我可以帮你核对对应的保修政策；\n2. 如果涉及维修或保修申请，我可以帮你转接**售后/技术支持**同事，由他们按型号给出准确年限和保修范围。\n\n需要我帮你转接售后，还是你先提供型号/订单号？",
+        "intent": "query",
+        "intent_group": "query",
+        "agent_type": "general",
+        "agent_types": [
+          "general"
+        ],
+        "primary_agent": "general",
+        "supporting_agents": [],
+        "routing_reason": "intent=query, group=query, primary=general, supporting=none, scores=[general=0.65, technical=0.00, billing=0.00]",
+        "routing_confidence": 0.65,
+        "escalated": false,
+        "latency_ms": 7315,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7027947631242007,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.28897381562100355,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "inspect_request_context"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.8,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.925,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    },
+    {
+      "id": "unanswerable-enterprise-sla",
+      "query": "企业版保证百分之百可用，并且故障十分钟内赔付吗？",
+      "category": "unanswerable",
+      "difficulty": "hard",
+      "answerable": false,
+      "expected_abstain": true,
+      "gold_ids": [],
+      "retrieved_ids": [
+        "bc3e1466333c378c207afe4d6ce2136e137821f081238a7e35661341e7956854:0",
+        "fc339a5f6e02c27fbb16a3b90d1514eec45e24c03ab1f8fd4e2d8d2606e40619:0",
+        "7ebf70f47560dfac84a0bf950a9fab876024df8dee5029f937593d86064248d4:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        },
+        "3": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        },
+        "5": {
+          "hit": null,
+          "recall": null,
+          "precision": null,
+          "mrr": null,
+          "ndcg": null
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150838Z-6e9415e1-26",
+        "request_id": "d7a2e4a5-9e9e-4f97-951d-fb62c37ca5fd",
+        "response": "**结论：知识库里没有“企业版 100% 可用 + 故障十分钟内赔付”的条款，我不能确认这个说法成立。**\n\n我检索了本地知识库（SLA、服务可用性、赔付标准等关键词），返回的都是退款政策、订阅与自动续费、技术错误码说明这类文档，**没有找到任何企业版 SLA 承诺或赔付时限的正式条款**。因此：\n\n- 我无法确认“百分之百可用”这一承诺；\n- 也无法确认“故障十分钟内赔付”的时限与赔付方式。\n\n需要说明的是，这类服务等级承诺通常写在正式的企业版 SLA 合同或商务协议里，具体条款（可用性指标、故障认定口径、赔付申请流程与时限）以签署的合同文本为准，客服知识库一般不覆盖。\n\n**下一步建议：**\n1. 如果你手上有企业版合同或 SLA 附件，可以直接核对“服务可用性”和“服务补偿”章节；\n2. 如果你希望我们核实贵司合同中的具体承诺，我可以帮你转接**企业版商务/合同支持**同事，由他们依据合同给出准确答复。\n\n需要我帮你转接吗？另外，如果你能补充一下**贵司的企业版合同编号或签约主体名称**，转接时会更高效。",
+        "intent": "query",
+        "intent_group": "query",
+        "agent_type": "general",
+        "agent_types": [
+          "general"
+        ],
+        "primary_agent": "general",
+        "supporting_agents": [],
+        "routing_reason": "intent=query, group=query, primary=general, supporting=none, scores=[general=0.65, technical=0.00, billing=0.00]",
+        "routing_confidence": 0.65,
+        "escalated": false,
+        "latency_ms": 9335,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7073389766325221,
+        "intent_source_scores": {
+          "llm": 0.85,
+          "embedding": 0.3116948831626104,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base",
+          "inspect_request_context"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 0.9,
+        "helpfulness": 0.9,
+        "accuracy": 1.0,
+        "overall": 0.95,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EchoMind · 一次 /chat 请求的 LLM API 调用链路</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1:  #fcfcfb;
+    --page:       #f9f9f7;
+    --ink:        #0b0b0b;
+    --ink-2:      #52514e;
+    --muted:      #898781;
+    --grid:       #e1e0d9;
+    --axis:       #c3c2b7;
+    --border:     rgba(11,11,11,0.10);
+    --accent:     #256abf;   /* blue-500, white ink 5.39:1 */
+    --accent-ink: #ffffff;
+    --accent-wash:#cde2fb;   /* blue-100, linked/hover wash */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1:  #1a1a19;
+      --page:       #0d0d0d;
+      --ink:        #f0efec;
+      --ink-2:      #c3c2b7;
+      --muted:      #898781;
+      --grid:       #2c2c2a;
+      --axis:       #383835;
+      --border:     rgba(255,255,255,0.10);
+      --accent:     #3987e5;  /* dark blue-400, dark ink 5.34:1 */
+      --accent-ink: #0d0d0d;
+      --accent-wash:#184f95;  /* blue-600 on dark */
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1:  #1a1a19;
+    --page:       #0d0d0d;
+    --ink:        #f0efec;
+    --ink-2:      #c3c2b7;
+    --muted:      #898781;
+    --grid:       #2c2c2a;
+    --axis:       #383835;
+    --border:     rgba(255,255,255,0.10);
+    --accent:     #3987e5;
+    --accent-ink: #0d0d0d;
+    --accent-wash:#184f95;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .viz-root { max-width: 1180px; margin: 0 auto; padding: 32px 24px 56px; }
+  code, .mono {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12px;
+  }
+  a { color: inherit; }
+
+  /* ---------- header ---------- */
+  header h1 { margin: 0 0 6px; font-size: 22px; line-height: 1.3; }
+  header .sub { color: var(--ink-2); margin: 0 0 14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface-1); padding: 4px 12px;
+    font-size: 12px; color: var(--ink-2); white-space: nowrap;
+  }
+  .chip .key {
+    width: 10px; height: 10px; border-radius: 3px; background: var(--accent);
+    flex: none;
+  }
+  .chip b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- layout ---------- */
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 980px) { .layout { grid-template-columns: 1fr; } }
+
+  /* ---------- flow ---------- */
+  .flow {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 18px 8px;
+  }
+  .lane { margin-bottom: 6px; }
+  .lane-tag {
+    font-size: 11px; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--muted); margin: 14px 2px 6px; font-weight: 600;
+  }
+  .lane:first-child .lane-tag { margin-top: 0; }
+
+  .node { margin: 0 2px 8px; }
+
+  .comp {
+    border: 1px solid var(--border);
+    background: var(--surface-1);
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .comp + .comp { margin-top: 6px; }
+  .comp-title { font-weight: 600; }
+  .comp-title .mono { font-weight: 500; }
+  .comp-sub { color: var(--muted); font-size: 12px; margin-top: 1px; }
+  .comp-note { color: var(--ink-2); font-size: 12.5px; margin-top: 4px; }
+
+  .api {
+    display: flex; align-items: center; gap: 10px;
+    width: 100%; text-align: left;
+    background: var(--accent); color: var(--accent-ink);
+    border: 0; border-radius: 8px;
+    padding: 9px 12px;
+    font: inherit; font-weight: 600;
+    cursor: pointer;
+  }
+  .api:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .api .num {
+    flex: none; width: 22px; height: 22px; border-radius: 6px;
+    display: grid; place-items: center;
+    background: rgba(255,255,255,0.18);
+    color: var(--accent-ink); font-size: 12.5px; font-weight: 700;
+  }
+  .api .desc { flex: 1; min-width: 0; }
+  .api .params {
+    flex: none; max-width: 46%;
+    font-weight: 500; font-size: 12px; opacity: .92;
+    text-align: right;
+  }
+  @media (max-width: 640px) { .api .params { display: none; } }
+
+  .loop {
+    margin: 4px 2px 8px 18px;
+    border: 1px dashed var(--axis);
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 12.5px; color: var(--ink-2);
+    background: transparent;
+  }
+  .loop b { color: var(--ink); }
+  .opt { border-style: dashed; }
+  .opt .num { background: rgba(0,0,0,0.14); }
+
+  .fallback {
+    display: flex; align-items: center; gap: 8px;
+    margin: 2px 2px 8px 18px;
+    font-size: 12.5px; color: var(--ink-2);
+  }
+  .fallback .dash {
+    flex: none; width: 26px; height: 0;
+    border-top: 2px dashed var(--axis);
+    position: relative;
+  }
+  .fallback .dash::after {
+    content: ""; position: absolute; right: -1px; top: -5px;
+    border-left: 6px solid var(--axis); border-top: 5px solid transparent; border-bottom: 5px solid transparent;
+  }
+
+  .edge {
+    width: 2px; height: 16px; margin-left: 18px;
+    background: var(--axis);
+    position: relative;
+  }
+  .edge::after {
+    content: ""; position: absolute; left: -4px; bottom: -1px;
+    border-top: 6px solid var(--axis);
+    border-left: 5px solid transparent; border-right: 5px solid transparent;
+  }
+
+  /* linked (hover/focus) state */
+  .api.linked { box-shadow: 0 0 0 2px var(--accent), 0 2px 10px rgba(0,0,0,.15); }
+  tr.linked { background: var(--accent-wash); }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .api.linked { box-shadow: 0 0 0 2px var(--accent-wash), 0 2px 10px rgba(0,0,0,.5); }
+  }
+  :root[data-theme="dark"] .api.linked { box-shadow: 0 0 0 2px var(--accent-wash), 0 2px 10px rgba(0,0,0,.5); }
+
+  /* ---------- summary table ---------- */
+  .summary {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    position: sticky; top: 16px;
+  }
+  .summary h2 { margin: 0 0 10px; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th, td { text-align: left; vertical-align: top; padding: 7px 8px; border-bottom: 1px solid var(--grid); }
+  th { color: var(--muted); font-weight: 600; font-size: 11.5px; white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  td.n { font-weight: 700; font-variant-numeric: tabular-nums; width: 22px; }
+  td.loc { font-size: 11.5px; }
+  td.loc .mono { color: var(--muted); }
+  .tag {
+    display: inline-block; border-radius: 4px; padding: 0 6px;
+    font-size: 11px; font-weight: 600;
+  }
+  .tag.must { background: var(--accent); color: var(--accent-ink); }
+  .tag.opt  { border: 1px dashed var(--axis); color: var(--ink-2); }
+  .tag.safe { border: 1px solid var(--border); color: var(--ink-2); }
+
+  /* ---------- anatomy footer ---------- */
+  .anatomy {
+    margin-top: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface-1);
+    padding: 14px 18px;
+  }
+  .anatomy h2 { margin: 0 0 10px; font-size: 14px; }
+  .anatomy pre {
+    margin: 0 0 12px; padding: 12px 14px;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--page);
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12.5px; line-height: 1.7; overflow-x: auto;
+  }
+  .anatomy .note { color: var(--ink-2); font-size: 12.5px; margin-top: 8px; }
+  .anatomy .note b { color: var(--ink); }
+
+  footer { margin-top: 20px; color: var(--muted); font-size: 12px; }
+
+  @media print {
+    body { background: #fff; }
+    .viz-root { max-width: none; padding: 0; }
+    .summary { position: static; }
+    .api { cursor: default; }
+  }
+  @media (forced-colors: active) {
+    .api { border: 2px solid CanvasText; forced-color-adjust: none; }
+    .comp, .flow, .summary, .anatomy { border-color: CanvasText; }
+  }
+</style>
+</head>
+<body>
+<div class="viz-root">
+  <header>
+    <h1>EchoMind · 一次 <code>/chat</code> 请求的 LLM API 调用链路</h1>
+    <p class="sub">蓝色 = LLM API 调用点（POST <code>/v1/messages</code>）。每轮对话调用模型 3~4 次，全部经由 LangChain4j 的 <code>AnthropicChatModel</code>。</p>
+    <div class="chips">
+      <span class="chip"><span class="key" aria-hidden="true"></span>LLM API 调用点</span>
+      <span class="chip">每轮 <b>3~4</b> 次模型调用</span>
+      <span class="chip">工具循环上限 <b>4</b> 轮（快路径）/ <b>6</b> 轮（协商）</span>
+      <span class="chip">整轮总超时 <b>50s</b></span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- ================= flow ================= -->
+    <main class="flow">
+
+      <section class="lane">
+        <p class="lane-tag">入口 · Controller → ChatService</p>
+        <div class="node comp">
+          <div class="comp-title">POST <span class="mono">/chat</span> → EchoMindController.chat</div>
+          <div class="comp-sub">EchoMindController.java:78</div>
+        </div>
+        <div class="edge" aria-hidden="true"></div>
+        <div class="node comp">
+          <div class="comp-title">ChatService.execute</div>
+          <div class="comp-sub">ChatService.java:47</div>
+          <div class="comp-note">幂等回执（client_request_id）→ 会话租约 → 记忆读取（MemoryManager.getContext），50s 总超时（ChatService.java:37）</div>
+        </div>
+      </section>
+
+      <section class="lane">
+        <p class="lane-tag">意图识别 · IntentRecognizer</p>
+        <div class="node comp">
+          <div class="comp-title">三路投票：LLM 70% + embedding 20% + 规则 pattern 10%</div>
+          <div class="comp-sub">IntentRecognizer.java:92（投票 IntentRecognizer.java:226-260）</div>
+        </div>
+        <div class="edge" aria-hidden="true"></div>
+        <button class="node api" data-ref="call-1" aria-label="第 1 次模型调用：意图识别">
+          <span class="num" aria-hidden="true">1</span>
+          <span class="desc">意图识别 LLM · llmGateway.chat("", prompt, 0.1, 256)</span>
+          <span class="params">temperature 0.1 · max_tokens 256 · 强制输出 JSON</span>
+        </button>
+        <div class="fallback"><span class="dash" aria-hidden="true"></span>失败 → 降级为 embedding/pattern 投票，不阻断主流程（IntentRecognizer.java:154-161）</div>
+      </section>
+
+      <section class="lane">
+        <p class="lane-tag">编排 · AgentOrchestrator</p>
+        <div class="node comp">
+          <div class="comp-title">路由打分 → 选主/副 Agent（意图 + 关键词 + 实体加权）</div>
+          <div class="comp-sub">AgentOrchestrator.java:73（routeDecision :267 · domainScores :312）</div>
+          <div class="comp-note">可用性筛选：stats().admit() 探针 + routingScore 排序（AgentOrchestrator.java:594）</div>
+        </div>
+      </section>
+
+      <section class="lane">
+        <p class="lane-tag">Agent 执行 · BaseAgent → AgentAiService</p>
+        <div class="node comp">
+          <div class="comp-title">BaseAgent.handle：systemPrompt + profile contract + 动态 Skills + 协作协议</div>
+          <div class="comp-sub">BaseAgent.java:30（协作协议 ask_agent / delegate_agent · BaseAgent.java:65-79）</div>
+        </div>
+        <div class="edge" aria-hidden="true"></div>
+        <div class="node comp">
+          <div class="comp-title">AgentAiService.reply：组装请求</div>
+          <div class="comp-sub">AgentAiService.java:55</div>
+          <div class="comp-note">MessageWindowChatMemory（滚动 100 条）→ SystemMessage + 历史 user/assistant → RegistryToolProvider 注册工具 → ChatRequestParameters（temperature / maxTokens / model）</div>
+        </div>
+        <div class="edge" aria-hidden="true"></div>
+        <button class="node api" data-ref="call-2" aria-label="第 2 次模型调用：Agent 主体回答，含工具循环">
+          <span class="num" aria-hidden="true">2</span>
+          <span class="desc">Agent 主体调用 · assistant.reply(...) → ManagedChatModel → HTTP</span>
+          <span class="params">全量人设+历史+工具定义 · 循环 ≤4/6 轮</span>
+        </button>
+        <div class="loop"><b>工具循环：</b>返回 <code>stop_reason=tool_use</code> → LangChain4j 拦截响应 → ToolExecutor → RegistryToolProvider.execute → registry.call 执行工具 → 结果 JSON 截断后追加进消息 → <b>再发一次请求</b>，直到输出纯文本或达到上限（AgentAiService.java:76 · RegistryToolProvider.java:56）</div>
+        <div class="loop">每次 provider 调用经 ManagedChatModel：耗时打点 + PromptBudget 裁剪（ManagedChatModel.java:18）</div>
+      </section>
+
+      <section class="lane">
+        <p class="lane-tag">回答校验 · AnswerVerifier → LLMJudge</p>
+        <div class="node comp">
+          <div class="comp-title">AnswerVerifier.verify：回答是否被工具证据支撑</div>
+          <div class="comp-sub">LLMJudge.java:44</div>
+        </div>
+        <div class="edge" aria-hidden="true"></div>
+        <button class="node api" data-ref="call-3" aria-label="第 3 次模型调用：LLM Judge 校验">
+          <span class="num" aria-hidden="true">3</span>
+          <span class="desc">LLM Judge · judgeChat(system, prompt, 0, budget, model)</span>
+          <span class="params">temperature 0 · 证据核对</span>
+        </button>
+        <div class="edge" aria-hidden="true"></div>
+        <button class="node api opt" data-ref="call-4" aria-label="第 4 次模型调用：可选，critique-revise 重答">
+          <span class="num" aria-hidden="true">4</span>
+          <span class="desc">Critique-revise：校验不过 → 负评作为 CRITIQUE 消息回注 → 主 Agent 重答一轮</span>
+          <span class="params">可选 · 仅当 bus.critique-revise 开启</span>
+        </button>
+        <div class="fallback"><span class="dash" aria-hidden="true"></span>AgentOrchestrator.reviseWithCritique（AgentOrchestrator.java:147-186）</div>
+      </section>
+
+    </main>
+
+    <!-- ================= summary ================= -->
+    <aside class="summary" aria-label="调用点汇总表">
+      <h2>4 个调用点速查（面试表）</h2>
+      <table>
+        <thead>
+          <tr><th>#</th><th>发起方</th><th>代码位置</th><th>参数要点</th></tr>
+        </thead>
+        <tbody>
+          <tr data-ref="call-1">
+            <td class="n">1</td>
+            <td>意图识别 <span class="tag must">必须</span></td>
+            <td class="loc">IntentRecognizer.java:143<br><span class="mono">llmGateway.chat</span></td>
+            <td>temp 0.1 · 256 tokens<br>要求严格 JSON<br>失败走规则降级</td>
+          </tr>
+          <tr data-ref="call-2">
+            <td class="n">2</td>
+            <td>Agent 主体 <span class="tag must">必须</span></td>
+            <td class="loc">AgentAiService.java:82<br><span class="mono">assistant.reply</span></td>
+            <td>人设+100条历史+工具定义<br>tool_use 循环 ≤4/6 轮<br>每次调用打点+预算裁剪</td>
+          </tr>
+          <tr data-ref="call-3">
+            <td class="n">3</td>
+            <td>LLM Judge <span class="tag must">必须</span></td>
+            <td class="loc">LLMJudge.java:44<br><span class="mono">judgeChat</span></td>
+            <td>temp 0<br>证据支撑核对</td>
+          </tr>
+          <tr data-ref="call-4">
+            <td class="n">4</td>
+            <td>Critique-revise <span class="tag opt">可选</span></td>
+            <td class="loc">AgentOrchestrator.java:147<br><span class="mono">reviseWithCritique</span></td>
+            <td>校验不过且开启<br>bus.critique-revise 时触发<br>仅重答一轮</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin:12px 0 0;font-size:12px;color:var(--ink-2)">悬停 / 聚焦左侧蓝色调用点，可高亮对应行；点击可固定。</p>
+    </aside>
+  </div>
+
+  <!-- ================= anatomy ================= -->
+  <section class="anatomy">
+    <h2>HTTP 层：库内部实际发出的请求</h2>
+    <pre>POST {base-url}/v1/messages
+Headers: x-api-key: ${key} · anthropic-version: 2023-06-01
+Body:    { model, max_tokens, messages[], system, tools[], temperature }
+响应:    stop_reason = "end_turn" | "tool_use"（tool_use → 执行工具后再发请求）</pre>
+    <p class="note"><b>模型切换（ChatModelConfig.java:12-35）：</b>anthropic profile → <code>api.anthropic.com/v1</code> + <code>claude-sonnet-4-6</code>；deepseek profile → 复用同一个 <code>AnthropicChatModel</code> 类，base-url 指向 <code>api.deepseek.com/anthropic/v1</code>（Anthropic 兼容端点）+ <code>deepseek-flash</code> + <code>thinkingType=disabled</code>。配置层决定端点，请求层组装消息/工具/参数，HTTP 与工具循环由 LangChain4j 完成。</p>
+  </section>
+
+  <footer>EchoMind（Java 版）· 依据当前源码生成 · 2026-11-07</footer>
+</div>
+
+<script>
+  (function () {
+    const pills = Array.from(document.querySelectorAll('.api[data-ref]'));
+    const rows = Array.from(document.querySelectorAll('tr[data-ref]'));
+    const byRef = ref => rows.find(r => r.dataset.ref === ref);
+    const clear = () => { pills.forEach(p => p.classList.remove('linked')); rows.forEach(r => r.classList.remove('linked')); };
+    pills.forEach(pill => {
+      const link = (on) => {
+        clear();
+        if (on) { pill.classList.add('linked'); const row = byRef(pill.dataset.ref); if (row) row.classList.add('linked'); }
+      };
+      pill.addEventListener('mouseenter', () => link(true));
+      pill.addEventListener('mouseleave', () => link(false));
+      pill.addEventListener('focus', () => link(true));
+      pill.addEventListener('blur', () => link(false));
+      pill.addEventListener('click', () => {
+        if (pill.classList.contains('pinned')) { pill.classList.remove('pinned'); link(false); }
+        else { pill.classList.add('pinned'); link(true); }
+      });
+    });
+    rows.forEach(row => {
+      const pill = pills.find(p => p.dataset.ref === row.dataset.ref);
+      if (!pill) return;
+      row.addEventListener('mouseenter', () => { clear(); row.classList.add('linked'); pill.classList.add('linked'); });
+      row.addEventListener('mouseleave', () => { if (!pill.classList.contains('pinned')) { row.classList.remove('linked'); pill.classList.remove('linked'); } });
+    });
+  })();
+</script>
+</body>
+</html>

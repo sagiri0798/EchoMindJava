@@ -1,0 +1,47 @@
+{
+  "dataset_version": "customer-service-rag-v1",
+  "corpus_version": "2026-10-29",
+  "selection": "8 answerable cases across categories; identical for all A/B groups",
+  "queries": [
+    {
+      "id": "refund-arrival-time",
+      "category": "refund",
+      "query": "退款审核通过后，钱多久能回到原支付账户？"
+    },
+    {
+      "id": "invoice-after-payment",
+      "category": "invoice",
+      "query": "付款成功后多久可以拿到电子发票？"
+    },
+    {
+      "id": "payment-failed-page",
+      "category": "payment",
+      "query": "页面显示支付失败，但银行卡可能已经扣款，该怎么办？"
+    },
+    {
+      "id": "subscription-cancel-renewal",
+      "category": "subscription",
+      "query": "自动续费在哪里关闭，关闭后马上失效吗？"
+    },
+    {
+      "id": "account-email-change",
+      "category": "account",
+      "query": "修改账户邮箱需要验证哪些内容？"
+    },
+    {
+      "id": "security-strange-login",
+      "category": "security",
+      "query": "发现有人在陌生设备登录，我第一步应该做什么？"
+    },
+    {
+      "id": "technical-http-401",
+      "category": "technical",
+      "query": "调用接口一直返回 HTTP 401，应该检查什么？"
+    },
+    {
+      "id": "order-no-tracking-seven-days",
+      "category": "order",
+      "query": "订单显示已发货，但七天都没有物流更新怎么办？"
+    }
+  ]
+}

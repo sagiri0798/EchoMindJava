@@ -1,0 +1,12 @@
+target/
+.idea/
+.vscode/
+.DS_Store
+.env
+*.log
+data/
+.claude/
+__pycache__/
+*.py[cod]
+.mvn/apache-maven-3.9.9/
+.mvn/apache-maven-3.9.9-bin.zip

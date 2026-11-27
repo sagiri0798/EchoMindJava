@@ -1,0 +1,364 @@
+{
+  "label": "B-cache-on-cold",
+  "target": "http://127.0.0.1:8096",
+  "queriesFile": "docs/evidence/latency-ab/queries.json",
+  "rounds": [
+    {
+      "round": 1,
+      "requests": 8,
+      "latency_ms": {
+        "p50": 1782,
+        "p95": 1962,
+        "p99": 1962,
+        "max": 1962
+      },
+      "http_counts": {
+        "200": 8
+      },
+      "status_counts": {
+        "success": 8
+      },
+      "distinct_request_ids": 8,
+      "duplicate_request_ids": 0,
+      "answer_hashes": [
+        "2870403e9f419c96",
+        "84e7495e11d9e4fe"
+      ],
+      "agent_types": [
+        "technical"
+      ],
+      "tools_used": [
+        "search_knowledge_base"
+      ],
+      "errors": [],
+      "by_query": {
+        "refund-arrival-time": {
+          "count": 1,
+          "p50": 1962,
+          "p95": 1962,
+          "p99": 1962,
+          "answerHashes": [
+            "2870403e9f419c96"
+          ],
+          "agentTypes": [
+            "technical"
+          ],
+          "toolsUsed": [
+            "search_knowledge_base"
+          ],
+          "status": {
+            "success": 1
+          }
+        },
+        "invoice-after-payment": {
+          "count": 1,
+          "p50": 1960,
+          "p95": 1960,
+          "p99": 1960,
+          "answerHashes": [
+            "2870403e9f419c96"
+          ],
+          "agentTypes": [
+            "technical"
+          ],
+          "toolsUsed": [
+            "search_knowledge_base"
+          ],
+          "status": {
+            "success": 1
+          }
+        },
+        "payment-failed-page": {
+          "count": 1,
+          "p50": 1960,
+          "p95": 1960,
+          "p99": 1960,
+          "answerHashes": [
+            "2870403e9f419c96"
+          ],
+          "agentTypes": [
+            "technical"
+          ],
+          "toolsUsed": [
+            "search_knowledge_base"
+          ],
+          "status": {
+            "success": 1
+          }
+        },
+        "subscription-cancel-renewal": {
+          "count": 1,
+          "p50": 1782,
+          "p95": 1782,
+          "p99": 1782,
+          "answerHashes": [
+            "84e7495e11d9e4fe"
+          ],
+          "agentTypes": [
+            "technical"
+          ],
+          "toolsUsed": [
+            "search_knowledge_base"
+          ],
+          "status": {
+            "success": 1
+          }
+        },
+        "account-email-change": {
+          "count": 1,
+          "p50": 1783,
+          "p95": 1783,
+          "p99": 1783,
+          "answerHashes": [
+            "84e7495e11d9e4fe"
+          ],
+          "agentTypes": [
+            "technical"
+          ],
+          "toolsUsed": [
+            "search_knowledge_base"
+          ],
+          "status": {
+            "success": 1
+          }
+        },
+        "security-strange-login": {
+          "count": 1,
+          "p50": 830,
+          "p95": 830,
+          "p99": 830,
+          "answerHashes": [
+            "84e7495e11d9e4fe"
+          ],
+          "agentTypes": [
+            "technical"
+          ],
+          "toolsUsed": [
+            "search_knowledge_base"
+          ],
+          "status": {
+            "success": 1
+          }
+        },
+        "technical-http-401": {
+          "count": 1,
+          "p50": 829,
+          "p95": 829,
+          "p99": 829,
+          "answerHashes": [
+            "84e7495e11d9e4fe"
+          ],
+          "agentTypes": [
+            "technical"
+          ],
+          "toolsUsed": [
+            "search_knowledge_base"
+          ],
+          "status": {
+            "success": 1
+          }
+        },
+        "order-no-tracking-seven-days": {
+          "count": 1,
+          "p50": 868,
+          "p95": 868,
+          "p99": 868,
+          "answerHashes": [
+            "84e7495e11d9e4fe"
+          ],
+          "agentTypes": [
+            "technical"
+          ],
+          "toolsUsed": [
+            "search_knowledge_base"
+          ],
+          "status": {
+            "success": 1
+          }
+        }
+      }
+    }
+  ],
+  "requestsPerRound": 8,
+  "concurrency": 5,
+  "warmup": 0,
+  "timeoutMs": 120000,
+  "seeded": true,
+  "start": "2026-11-27T22:18:11.706Z",
+  "warmup_result": null,
+  "overall": {
+    "requests": 8,
+    "latency_ms": {
+      "p50": 1782,
+      "p95": 1962,
+      "p99": 1962,
+      "max": 1962
+    },
+    "http_counts": {
+      "200": 8
+    },
+    "status_counts": {
+      "success": 8
+    },
+    "distinct_request_ids": 8,
+    "duplicate_request_ids": 0,
+    "answer_hashes": [
+      "2870403e9f419c96",
+      "84e7495e11d9e4fe"
+    ],
+    "agent_types": [
+      "technical"
+    ],
+    "tools_used": [
+      "search_knowledge_base"
+    ],
+    "errors": [],
+    "by_query": {
+      "refund-arrival-time": {
+        "count": 1,
+        "p50": 1962,
+        "p95": 1962,
+        "p99": 1962,
+        "answerHashes": [
+          "2870403e9f419c96"
+        ],
+        "agentTypes": [
+          "technical"
+        ],
+        "toolsUsed": [
+          "search_knowledge_base"
+        ],
+        "status": {
+          "success": 1
+        }
+      },
+      "invoice-after-payment": {
+        "count": 1,
+        "p50": 1960,
+        "p95": 1960,
+        "p99": 1960,
+        "answerHashes": [
+          "2870403e9f419c96"
+        ],
+        "agentTypes": [
+          "technical"
+        ],
+        "toolsUsed": [
+          "search_knowledge_base"
+        ],
+        "status": {
+          "success": 1
+        }
+      },
+      "payment-failed-page": {
+        "count": 1,
+        "p50": 1960,
+        "p95": 1960,
+        "p99": 1960,
+        "answerHashes": [
+          "2870403e9f419c96"
+        ],
+        "agentTypes": [
+          "technical"
+        ],
+        "toolsUsed": [
+          "search_knowledge_base"
+        ],
+        "status": {
+          "success": 1
+        }
+      },
+      "subscription-cancel-renewal": {
+        "count": 1,
+        "p50": 1782,
+        "p95": 1782,
+        "p99": 1782,
+        "answerHashes": [
+          "84e7495e11d9e4fe"
+        ],
+        "agentTypes": [
+          "technical"
+        ],
+        "toolsUsed": [
+          "search_knowledge_base"
+        ],
+        "status": {
+          "success": 1
+        }
+      },
+      "account-email-change": {
+        "count": 1,
+        "p50": 1783,
+        "p95": 1783,
+        "p99": 1783,
+        "answerHashes": [
+          "84e7495e11d9e4fe"
+        ],
+        "agentTypes": [
+          "technical"
+        ],
+        "toolsUsed": [
+          "search_knowledge_base"
+        ],
+        "status": {
+          "success": 1
+        }
+      },
+      "security-strange-login": {
+        "count": 1,
+        "p50": 830,
+        "p95": 830,
+        "p99": 830,
+        "answerHashes": [
+          "84e7495e11d9e4fe"
+        ],
+        "agentTypes": [
+          "technical"
+        ],
+        "toolsUsed": [
+          "search_knowledge_base"
+        ],
+        "status": {
+          "success": 1
+        }
+      },
+      "technical-http-401": {
+        "count": 1,
+        "p50": 829,
+        "p95": 829,
+        "p99": 829,
+        "answerHashes": [
+          "84e7495e11d9e4fe"
+        ],
+        "agentTypes": [
+          "technical"
+        ],
+        "toolsUsed": [
+          "search_knowledge_base"
+        ],
+        "status": {
+          "success": 1
+        }
+      },
+      "order-no-tracking-seven-days": {
+        "count": 1,
+        "p50": 868,
+        "p95": 868,
+        "p99": 868,
+        "answerHashes": [
+          "84e7495e11d9e4fe"
+        ],
+        "agentTypes": [
+          "technical"
+        ],
+        "toolsUsed": [
+          "search_knowledge_base"
+        ],
+        "status": {
+          "success": 1
+        }
+      }
+    }
+  },
+  "end": "2026-11-27T22:18:14.638Z"
+}

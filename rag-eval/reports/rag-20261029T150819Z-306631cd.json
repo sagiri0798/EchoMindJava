@@ -1,0 +1,183 @@
+{
+  "run_id": "rag-20261029T150819Z-306631cd",
+  "generated_at": "2026-10-29T15:08:31.793305+00:00",
+  "base_url": "http://127.0.0.1:8091",
+  "dataset_version": "customer-service-rag-v1",
+  "corpus_version": "2026-10-29",
+  "dataset_sha256": "bb340a0fb63b1ebb23762be21738ed36fe0757e5e9cf7c582bb46e3476eef28d",
+  "corpus": {
+    "documents": 10,
+    "expected_chunks": 10,
+    "observed_chunks": 10,
+    "isolated_exact_match": true
+  },
+  "config": {
+    "top_k": 5,
+    "cutoffs": [
+      1,
+      3,
+      5
+    ],
+    "retrieval_only": false,
+    "skip_judge": false,
+    "accuracy_threshold": 0.8,
+    "overall_threshold": 0.75
+  },
+  "retrieval": {
+    "answerable_cases": 1,
+    "cutoffs": {
+      "1": {
+        "hit_rate": 1.0,
+        "recall": 1.0,
+        "precision": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "3": {
+        "hit_rate": 1.0,
+        "recall": 1.0,
+        "precision": 0.3333,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      },
+      "5": {
+        "hit_rate": 1.0,
+        "recall": 1.0,
+        "precision": 0.2,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      }
+    },
+    "by_category": {
+      "refund": {
+        "cases": 1,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0
+      }
+    },
+    "unanswerable_retrieval_nonempty": 0
+  },
+  "generation": {
+    "overall": {
+      "cases": 1,
+      "judged_cases": 1,
+      "pass_rate": 1.0,
+      "accuracy": 1.0,
+      "overall": 1.0
+    },
+    "by_category": {
+      "refund": {
+        "cases": 1,
+        "judged_cases": 1,
+        "pass_rate": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0
+      }
+    }
+  },
+  "attribution": {
+    "pass": 1
+  },
+  "gate": {
+    "passed": true,
+    "min_recall": 0.8,
+    "observed_recall": 1.0,
+    "min_pass_rate": 0.75,
+    "observed_pass_rate": 1.0
+  },
+  "cases": [
+    {
+      "id": "refund-arrival-time",
+      "query": "退款审核通过后，钱多久能回到原支付账户？",
+      "category": "refund",
+      "difficulty": "easy",
+      "answerable": true,
+      "expected_abstain": false,
+      "gold_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0"
+      ],
+      "retrieved_ids": [
+        "b1a778119c13c9fadcbe2151828c2475d8cfbfa4cc5140766a9d5fc4702681f8:0",
+        "21c592412452c93b720902e7c409f006e483d728a2c59cd16a4ba0be587da614:0",
+        "be012362a9ea8c843edb4b1a07ac110d8724d729b21350e2487277a8be8cdfdf:0",
+        "0bdfc39211964b0a8395ac30c6ee2a224d19be2d18083e24f0016ab63ea73976:0",
+        "bc1ae3893f4a199f74f8748372964370c900a79a152b7947b26fad8c433a21d3:0"
+      ],
+      "search_error": null,
+      "retrieval_metrics": {
+        "1": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        "5": {
+          "hit": 1.0,
+          "recall": 1.0,
+          "precision": 0.2,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "chat": {
+        "conv_id": "rag-20261029T150819Z-306631cd-1",
+        "request_id": "ad90a746-e92b-429b-89c8-2c2d57e3bb38",
+        "response": "**退款到账时间说明**\n\n根据平台退款政策（演示版）：\n\n- **审核通过后**：款项通常在 **5 至 7 个工作日** 内退回原支付账户。\n- 实际到账时间以支付渠道（微信、支付宝、银行卡等）的处理进度为准，不同渠道可能略有差异。\n\n**需要注意的几点**\n\n1. 这里的“5 至 7 个工作日”是平台侧发起退款的常规时效，不含支付渠道自身的入账处理时间。\n2. 退款一般原路退回，即退回原支付方式；如果原支付方式已失效（如银行卡注销），可能需要人工协助处理。\n3. 优惠券、积分等权益是否返还，以支付渠道实际处理结果为准。\n\n**如果显示退款成功但未到账**\n\n建议先检查原支付账户的入账记录和支付渠道通知；若超过上述常规时间仍未到账，可提供以下信息，我会协助转人工核实退款流水：\n\n- 订单号\n- 支付时间与支付渠道\n- 退款金额与币种\n- 退款成功页面截图摘要（无需提供完整卡号、密码或验证码）\n\n**下一步**\n\n如需我帮你核实具体某笔退款的进度，请提供订单号、支付时间和支付渠道。涉及实际退款流水核查或异常情况，需要人工或财务进一步核验，我无法直接承诺到账时间。",
+        "intent": "refund",
+        "intent_group": "billing",
+        "agent_type": "billing",
+        "agent_types": [
+          "billing"
+        ],
+        "primary_agent": "billing",
+        "supporting_agents": [],
+        "routing_reason": "intent=refund, group=billing, primary=billing, supporting=none, scores=[billing=1.11, general=0.10, technical=0.00]",
+        "routing_confidence": 1.0,
+        "escalated": true,
+        "latency_ms": 8310,
+        "knowledge_used": true,
+        "verified": true,
+        "grounded": true,
+        "entities": {
+          "order_id": [],
+          "product": [],
+          "date": [],
+          "error_code": [],
+          "amount": []
+        },
+        "intent_confidence": 0.7879305165498872,
+        "intent_source_scores": {
+          "llm": 0.95,
+          "embedding": 0.36465258274943624,
+          "pattern": 0.5
+        },
+        "tools_used": [
+          "search_knowledge_base"
+        ],
+        "intent_embedding_source": "local-ngram",
+        "status": "success",
+        "retryable": false,
+        "error_code": null,
+        "_http_status": 200
+      },
+      "judge": {
+        "completeness": 1.0,
+        "helpfulness": 1.0,
+        "accuracy": 1.0,
+        "overall": 1.0,
+        "relevance": 1.0,
+        "judge_failed": false
+      },
+      "attribution": "pass"
+    }
+  ]
+}
